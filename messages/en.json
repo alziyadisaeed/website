@@ -1,0 +1,174 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "specialties": "Specialties",
+    "faq": "FAQ",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "headline": "Your Medical Journey to Russia Starts Here",
+    "subheadline": "With Dr. Saeed Alziyadi, experience world-class medical care at Moscow's finest hospitals — affordable, comprehensive, and fully supported in Arabic",
+    "ctaPrimary": "Contact Us on WhatsApp",
+    "ctaSecondary": "Explore Our Services",
+    "badge1": "10+ Years Experience",
+    "badge2": "500+ Patients Served",
+    "badge3": "Top Moscow Hospitals",
+    "badge4": "Full Arabic Support"
+  },
+  "about": {
+    "title": "About Us",
+    "text": "We are an elite team of Arab doctors working in the Russian Ministry of Health under the direct supervision of Dr. Saeed Alziyadi. We offer a comprehensive service that begins with coordinating with the best Russian doctors, through accurate medical translation, accommodation and transport, all the way to post-treatment follow-up.",
+    "card1": "Orthopedic Specialist",
+    "card2": "Company CEO",
+    "card3": "Top Hospital Partnerships",
+    "card4": "Post-Treatment Follow-Up"
+  },
+  "services": {
+    "title": "Our Services",
+    "card1Title": "Before Travel",
+    "card1Items": [
+      "Free medical consultation",
+      "Coordination with Russian doctors",
+      "Medical file translation",
+      "Hospital and appointment booking",
+      "Medical visa assistance",
+      "Accommodation arrangements"
+    ],
+    "card2Title": "During Your Journey",
+    "card2Items": [
+      "Airport reception",
+      "Medical interpreter provided",
+      "Accompaniment to appointments",
+      "Nursing team coordination",
+      "Treatment pathway supervision",
+      "Psychological and family support"
+    ],
+    "card3Title": "After Treatment",
+    "card3Items": [
+      "Remote periodic follow-up",
+      "Post-treatment report translation",
+      "Coordination with local doctor",
+      "Emergency support",
+      "Customized recovery plan",
+      "Ongoing consultations"
+    ]
+  },
+  "specialties": {
+    "title": "Our Medical Specialties",
+    "spec1": "Ophthalmology",
+    "spec1Desc": "LASIK surgery, vision correction, and intraocular lens implantation",
+    "spec2": "Orthopedic Surgery",
+    "spec2Desc": "Joint replacement and spinal injury treatment",
+    "spec3": "Cardiology",
+    "spec3Desc": "Cardiac catheterization, open-heart surgery, and valve replacement",
+    "spec4": "Oncology",
+    "spec4Desc": "Chemotherapy, radiotherapy, and specialized surgery",
+    "spec5": "Neurology",
+    "spec5Desc": "Brain and spinal surgery and neurological disease treatment",
+    "spec6": "Rehabilitation",
+    "spec6Desc": "Specialized programs for rehabilitation after strokes and surgeries, plus prosthetic limbs"
+  },
+  "whyUs": {
+    "title": "Why Choose Us?",
+    "row1Title": "Over a Decade of Experience",
+    "row1Desc": "More than 10 years facilitating medical journeys for Arab patients to Russia with a proven track record of success",
+    "row2Title": "Trusted Partnerships",
+    "row2Desc": "Established partnerships with the finest hospitals and medical centers in Moscow and St. Petersburg, and relationships with colleague doctors in hospitals that facilitate communicating cases medically and professionally and accelerating admission procedures",
+    "row3Title": "Arabic-Language Service",
+    "row3Desc": "A dedicated Arabic-speaking team accompanies you at every step of your medical journey",
+    "row4Title": "Transparent Pricing",
+    "row4Desc": "Clear and transparent pricing with no hidden costs, with installment options available depending on the case"
+  },
+  "partners": {
+    "title": "Our Hospital Partners",
+    "subtitle": "We collaborate with the leading hospitals and medical centers in Russia",
+    "list": [
+      "Herst Medical Center",
+      "Sechenov University Hospital",
+      "Pirogov Medical Center",
+      "Yudifevich Hospital",
+      "Ilizarov Center",
+      "Medsi Hospital",
+      "Komarovsky Center",
+      "Botkin Hospital",
+      "Koltsov Center",
+      "Ivanov Clinic",
+      "Sklifosovsky Hospital",
+      "National Cancer Medicine Center"
+    ]
+  },
+  "tourism": {
+    "title": "Medical Tourism Services",
+    "card1Title": "Accommodation",
+    "card1Desc": "Comfortable hotels and furnished apartments close to hospitals at affordable prices",
+    "card2Title": "Halal Dining",
+    "card2Desc": "Trusted halal restaurants and Arabic food delivery service to your residence",
+    "card3Title": "Transportation",
+    "card3Desc": "Private transfer service to and from the airport, hospitals, and all your appointments",
+    "card4Title": "Leisure",
+    "card4Desc": "Guided tours of Moscow for patient companions during the treatment period"
+  },
+  "contact": {
+		"title": "Contact Us Now",
+		"subtitle": "Our team is available around the clock to answer your questions and organize your medical journey",
+		"email": "drsaeedalziyadi@gmail.com",
+		"address": "Moscow, Russian Federation",
+		"whatsapp1": "+7 925 250 0066",
+		"whatsapp3": "+7 925 258 0005"
+  },
+  "footer": {
+    "tagline": "Your medical journey to Russia in trusted hands",
+    "copyright": "All rights reserved — Dr. Saeed Alziyadi Medical Tourism",
+    "certified": "Certified by the Russian Ministry of Health | Trusted Medical Partner since 2013",
+    "links": {
+      "privacy": "Privacy Policy",
+      "faq": "FAQ",
+      "blog": "Blog"
+    }
+  },
+  "faq": [
+    {
+      "q": "How do I start my medical journey to Russia?",
+      "a": "Start by contacting us via WhatsApp or email and sending us your medical file. Our team will review your case, coordinate with the appropriate doctors in Russia, and provide you with a personalized treatment plan."
+    },
+    {
+      "q": "What are the costs of a medical trip to Russia?",
+      "a": "Costs vary depending on the type of treatment, chosen hospital, and length of stay. In general, treatment costs in Russia are 40-60% lower than in Western countries with the same or better quality. We provide a detailed cost estimate before travel."
+    },
+    {
+      "q": "Do I need a medical visa to enter Russia?",
+      "a": "All Gulf countries and Jordan do not need an entry visa. Other countries may need a facilitated entry visa such as Algeria, Morocco, and Tunisia. For the remaining countries, an entry visa is required and we help patients obtain it easily."
+    },
+    {
+      "q": "Is medical translation available throughout treatment?",
+      "a": "Yes, a specialized medical interpreter accompanies you at all your appointments and treatment stages. Our team speaks Arabic, Russian, and English to ensure effective communication with the Russian medical team."
+    },
+    {
+      "q": "What medical specialties are available in Russia?",
+      "a": "Russia excels in ophthalmology, orthopedic surgery, cardiology, oncology treatment, neurology, and organ transplantation. We have partnerships with the best specialized centers in these fields."
+    },
+    {
+      "q": "How is accommodation and transportation arranged?",
+      "a": "We take care of arranging your complete stay in comfortable hotels or apartments near the hospital, as well as transportation to and from the airport, between the hospital and your accommodation, and all your medical appointments."
+    },
+    {
+      "q": "What happens if I need more time for treatment or complications arise?",
+      "a": "We are with you at all times. If an extension of stay or complications arise, our team immediately coordinates with the medical team and arranges what is needed. We also provide 24/7 emergency support."
+    },
+    {
+      "q": "How is follow-up handled after returning home?",
+      "a": "We provide comprehensive post-return follow-up including: translation of medical reports, coordination with your local doctor, regular video consultations, and emergency support. Our goal is for your medical care to continue after you return."
+    }
+  ],
+  "breadcrumb": {
+    "home": "Home",
+    "services": "Services",
+    "specialties": "Specialties",
+    "faq": "FAQ",
+    "blog": "Blog",
+    "contact": "Contact",
+    "privacy": "Privacy Policy"
+  }
+}
