@@ -7,7 +7,12 @@
       "Bash(npx shadcn@latest add button table dialog input textarea select badge card --yes)",
       "Bash(npm run *)",
       "Bash(node -e \"const nc = require\\('D:/_____work/dr_saeed/node_modules/next/dist/server/web/exports/cache.js'\\); console.log\\(Object.keys\\(nc\\)\\)\")",
-      "Bash(xargs grep *)"
+      "Bash(xargs grep *)",
+      "Bash(node *)",
+      "Bash(npx tsc *)",
+      "Bash(npx eslint *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/ar)",
+      "Read(//tmp/**)"
     ]
   }
 }

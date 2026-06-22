@@ -7,6 +7,7 @@ import WhyUs from '@/components/sections/WhyUs';
 import Partners from '@/components/sections/Partners';
 import TourismPartners from '@/components/sections/TourismPartners';
 import FaqSection from '@/components/sections/FaqSection';
+import RequestForm from '@/components/sections/RequestForm';
 import ContactCTA from '@/components/sections/ContactCTA';
 import JsonLd from '@/components/seo/JsonLd';
 import { getTranslations } from 'next-intl/server';
@@ -106,6 +107,7 @@ export default async function HomePage({
       <Partners locale={locale} />
       <TourismPartners locale={locale} />
       <FaqSection locale={locale} />
+      <RequestForm />
       <ContactCTA locale={locale} />
     </>
   );
