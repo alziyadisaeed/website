@@ -3,18 +3,18 @@ import { getTranslations } from 'next-intl/server';
 import JsonLd from '@/components/seo/JsonLd';
 import Link from 'next/link';
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://drsaeedalziyadi.com';
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://alziyadimed.com';
 
 const titles: Record<string, string> = {
-  ar: 'الأسئلة الشائعة | الدكتور سعيد الزيادي',
-  en: 'FAQ | Dr. Saeed Alziyadi',
-  ru: 'Вопросы и ответы | Доктор Саид Аль-Зияди',
+  ar: 'الأسئلة الشائعة | ألزيادي ميد',
+  en: 'FAQ | AlziyadiMed',
+  ru: 'Вопросы и ответы | AlziyadiMed',
 };
 
 const descriptions: Record<string, string> = {
-	ar: "إجابات على أكثر الأسئلة شيوعاً حول السياحة الطبية في روسيا مع فريق شركة الدكتور سعيد الزيادي.",
-	en: "Answers to the most common questions about medical tourism in Russia with Dr. Saeed Alziyadi.",
-	ru: "Ответы на наиболее часто задаваемые вопросы о медицинском туризме в России с доктором Саидом Аль-Зияди.",
+	ar: "إجابات على أكثر الأسئلة شيوعاً حول السياحة الطبية في روسيا مع فريق ألزيادي ميد.",
+	en: "Answers to the most common questions about medical tourism in Russia with AlziyadiMed.",
+	ru: "Ответы на наиболее часто задаваемые вопросы о медицинском туризме в России с AlziyadiMed.",
 };
 
 type FaqItem = { q: string; a: string };

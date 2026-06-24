@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://drsaeedalziyadi.com';
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://alziyadimed.com';
 
 const titles: Record<string, string> = {
-  ar: 'سياسة الخصوصية | د. سعيد الزيادي للسياحة العلاجية',
-  en: 'Privacy Policy | Dr. Saeed Alziyadi Medical Tourism',
-  ru: 'Политика конфиденциальности | Медицинский туризм Доктора Саида',
+  ar: 'سياسة الخصوصية | ألزيادي ميد للسياحة العلاجية',
+  en: 'Privacy Policy | AlziyadiMed Medical Tourism',
+  ru: 'Политика конфиденциальности | Медицинский туризм AlziyadiMed',
 };
 
 export async function generateMetadata({
@@ -85,10 +85,10 @@ export default async function PrivacyPolicyPage({
 						<p>
 							لأي استفسار حول هذه السياسة، تواصل معنا على:{" "}
 							<a
-								href="mailto:drsaeedalziyadi@gmail.com"
+								href="mailto:info@alziyadimed.com"
 								className="text-[var(--color-primary)]"
 							>
-								drsaeedalziyadi@gmail.com
+								info@alziyadimed.com
 							</a>
 						</p>
 					</section>
@@ -154,10 +154,10 @@ export default async function PrivacyPolicyPage({
 						<p>
 							По вопросам данной политики пишите нам:{" "}
 							<a
-								href="mailto:drsaeedalziyadi@gmail.com"
+								href="mailto:info@alziyadimed.com"
 								className="text-[var(--color-primary)]"
 							>
-								drsaeedalziyadi@gmail.com
+								info@alziyadimed.com
 							</a>
 						</p>
 					</section>
@@ -215,10 +215,10 @@ export default async function PrivacyPolicyPage({
 						<p>
 							For any questions regarding this policy, contact us at:{" "}
 							<a
-								href="mailto:drsaeedalziyadi@gmail.com"
+								href="mailto:info@alziyadimed.com"
 								className="text-[var(--color-primary)]"
 							>
-								drsaeedalziyadi@gmail.com
+								info@alziyadimed.com
 							</a>
 						</p>
 					</section>

@@ -3,10 +3,9 @@
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { updateTag } from 'next/cache';
-import { sanitizeHtml } from '@/lib/sanitize';
-import { connectDB } from '@/lib/mongodb';
-import Article from '@/lib/models/Article';
 import { redirect } from 'next/navigation';
+
+const API_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:4000';
 
 function requireSession() {
   return getServerSession(authOptions).then((session) => {
@@ -15,41 +14,35 @@ function requireSession() {
   });
 }
 
-function countWords(html: string): number {
-  return html
-    .replace(/<[^>]+>/g, ' ')
-    .trim()
-    .split(/\s+/)
-    .filter(Boolean).length;
-}
+async function callApi(path: string, init: RequestInit) {
+  const res = await fetch(`${API_URL}${path}`, {
+    ...init,
+    headers: {
+      ...init.headers,
+      'x-api-key': process.env.SERVICE_API_KEY ?? '',
+      'content-type': 'application/json',
+    },
+  });
 
-function toSlug(title: string): string {
-  return title
-    .toLowerCase()
-    .replace(/[^\w\s-]/g, '')
-    .replace(/\s+/g, '-')
-    .replace(/-+/g, '-')
-    .slice(0, 100);
+  if (!res.ok) {
+    throw new Error(`Article API request failed: ${res.status}`);
+  }
+
+  return res.json();
 }
 
 export async function createArticle(formData: FormData) {
   await requireSession();
-  await connectDB();
 
-  const rawContent = (formData.get('content') as string) ?? '';
-  const sanitized = sanitizeHtml(rawContent);
-  const title = (formData.get('title') as string) ?? '';
-  const slugInput = (formData.get('slug') as string) ?? '';
-
-  await Article.create({
-    title,
-    slug: slugInput || toSlug(title),
-    excerpt: (formData.get('excerpt') as string) ?? '',
-    content: sanitized,
-    locale: ((formData.get('locale') as string) ?? 'ar') as 'ar' | 'en' | 'ru',
-    wordCount: countWords(sanitized),
-    publishedAt: new Date(),
-    updatedAt: new Date(),
+  await callApi('/api/articles', {
+    method: 'POST',
+    body: JSON.stringify({
+      title: formData.get('title'),
+      slug: formData.get('slug'),
+      excerpt: formData.get('excerpt'),
+      content: formData.get('content'),
+      locale: formData.get('locale'),
+    }),
   });
 
   updateTag('articles');
@@ -58,19 +51,16 @@ export async function createArticle(formData: FormData) {
 
 export async function updateArticle(id: string, formData: FormData) {
   await requireSession();
-  await connectDB();
 
-  const rawContent = (formData.get('content') as string) ?? '';
-  const sanitized = sanitizeHtml(rawContent);
-
-  await Article.findByIdAndUpdate(id, {
-    title: formData.get('title'),
-    slug: formData.get('slug'),
-    excerpt: formData.get('excerpt'),
-    content: sanitized,
-    locale: (formData.get('locale') as 'ar' | 'en' | 'ru') ?? 'ar',
-    wordCount: countWords(sanitized),
-    updatedAt: new Date(),
+  await callApi(`/api/articles/${id}`, {
+    method: 'PUT',
+    body: JSON.stringify({
+      title: formData.get('title'),
+      slug: formData.get('slug'),
+      excerpt: formData.get('excerpt'),
+      content: formData.get('content'),
+      locale: formData.get('locale'),
+    }),
   });
 
   updateTag('articles');
@@ -79,8 +69,9 @@ export async function updateArticle(id: string, formData: FormData) {
 
 export async function deleteArticle(id: string) {
   await requireSession();
-  await connectDB();
-  await Article.findByIdAndDelete(id);
+
+  await callApi(`/api/articles/${id}`, { method: 'DELETE' });
+
   updateTag('articles');
   redirect('/admin');
 }

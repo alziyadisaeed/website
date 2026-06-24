@@ -37,19 +37,19 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL ?? 'https://drsaeedalziyadi.com'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL ?? 'https://alziyadimed.com'),
 };
 
 export function generateStaticParams() {
   return [{ locale: 'ar' }, { locale: 'en' }, { locale: 'ru' }];
 }
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://drsaeedalziyadi.com';
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://alziyadimed.com';
 
 const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'MedicalOrganization',
-  name: 'Dr. Saeed Alziyadi Medical Tourism',
+  name: 'AlziyadiMed',
   url: baseUrl,
   logo: `${baseUrl}/logo.png`,
   address: {
@@ -76,7 +76,7 @@ const personJsonLd = {
   jobTitle: 'Medical Tourism Specialist',
   worksFor: {
     '@type': 'MedicalOrganization',
-    name: 'Dr. Saeed Alziyadi Medical Tourism',
+    name: 'AlziyadiMed',
   },
   url: baseUrl,
 };

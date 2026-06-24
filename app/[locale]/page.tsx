@@ -12,12 +12,12 @@ import ContactCTA from '@/components/sections/ContactCTA';
 import JsonLd from '@/components/seo/JsonLd';
 import { getTranslations } from 'next-intl/server';
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://drsaeedalziyadi.com';
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://alziyadimed.com';
 
 const titles: Record<string, string> = {
-  ar: 'الدكتور سعيد الزيادي | السياحة الطبية في روسيا',
-  en: 'Dr. Saeed Alziyadi | Medical Tourism Russia',
-  ru: 'Доктор Саид Аль-Зияди | Медицинский туризм в России',
+  ar: 'ألزيادي ميد | السياحة الطبية في روسيا',
+  en: 'AlziyadiMed | Medical Tourism Russia',
+  ru: 'AlziyadiMed | Медицинский туризм в России',
 };
 
 const descriptions: Record<string, string> = {
@@ -48,7 +48,7 @@ export async function generateMetadata({
       title: titles[locale] ?? titles.ar,
       description: descriptions[locale] ?? descriptions.ar,
       url: `${baseUrl}/${locale}`,
-      siteName: 'Dr. Saeed Alziyadi Medical Tourism',
+      siteName: 'AlziyadiMed Medical Tourism',
       locale: locale,
       type: 'website',
     },
@@ -89,7 +89,7 @@ export default async function HomePage({
     description: descriptions[locale],
     provider: {
       '@type': 'MedicalOrganization',
-      name: 'Dr. Saeed Alziyadi Medical Tourism',
+      name: 'AlziyadiMed Medical Tourism',
       url: baseUrl,
     },
     areaServed: ['RU', 'SA', 'AE', 'KW', 'QA', 'BH', 'OM'],

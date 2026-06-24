@@ -40,7 +40,7 @@ export default function AdminLoginPage() {
             <LogIn className="text-white" size={24} />
           </div>
           <h1 className="text-2xl font-bold text-[#0F1F3D]">Admin Login</h1>
-          <p className="text-[#6B7A99] text-sm mt-1">Dr. Saeed Alziyadi CMS</p>
+          <p className="text-[#6B7A99] text-sm mt-1">AlziyadiMed CMS</p>
         </div>
 
         <form

@@ -29,7 +29,7 @@ export default async function Services({ locale }: ServicesProps) {
     },
   ];
 
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://drsaeedalziyadi.com';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://alziyadimed.com';
 
   return (
     <section id="services" className="py-16 sm:py-20">
@@ -68,7 +68,7 @@ export default async function Services({ locale }: ServicesProps) {
                     name: card.title,
                     provider: {
                       '@type': 'Organization',
-                      name: 'Dr. Saeed Alziyadi Medical Tourism',
+                      name: 'AlziyadiMed Medical Tourism',
                       url: baseUrl,
                     },
                     areaServed: ['RU', 'SA', 'AE', 'KW', 'QA', 'BH', 'OM'],

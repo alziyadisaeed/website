@@ -2,18 +2,18 @@ import type { Metadata } from 'next';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import JsonLd from '@/components/seo/JsonLd';
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://drsaeedalziyadi.com';
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://alziyadimed.com';
 
 const titles: Record<string, string> = {
-  ar: 'تواصل معنا | د. سعيد الزيادي للسياحة العلاجية',
-  en: 'Contact Us | Dr. Saeed Alziyadi Medical Tourism',
-  ru: 'Контакты | Медицинский туризм Доктора Саида',
+  ar: 'تواصل معنا | ألزيادي ميد للسياحة العلاجية',
+  en: 'Contact Us | AlziyadiMed Medical Tourism',
+  ru: 'Контакты | Медицинский туризм AlziyadiMed',
 };
 
 const descriptions: Record<string, string> = {
-  ar: 'تواصل مع فريق د. سعيد الزيادي عبر واتساب أو البريد الإلكتروني. نرد بالعربية والإنجليزية والروسية.',
-  en: 'Contact Dr. Saeed Alziyadi team via WhatsApp or email. We reply in Arabic, English, and Russian.',
-  ru: 'Свяжитесь с командой доктора Саида Аль-Зияди через WhatsApp или email. Отвечаем на арабском, английском и русском.',
+  ar: 'تواصل مع فريق ألزيادي ميد عبر واتساب أو البريد الإلكتروني. نرد بالعربية والإنجليزية والروسية.',
+  en: 'Contact AlziyadiMed team via WhatsApp or email. We reply in Arabic, English, and Russian.',
+  ru: 'Свяжитесь с командой AlziyadiMed через WhatsApp или email. Отвечаем на арабском, английском и русском.',
 };
 
 export async function generateMetadata({
@@ -161,10 +161,10 @@ export default async function ContactPage({
 								{c.emailHeading}
 							</h2>
 							<a
-								href="mailto:drsaeedalziyadi@gmail.com"
+								href="mailto:info@alziyadimed.com"
 								className="text-[var(--color-primary)] hover:text-[var(--color-primary-light)] text-sm font-medium transition-colors break-all"
 							>
-								drsaeedalziyadi@gmail.com
+								info@alziyadimed.com
 							</a>
 						</div>
 

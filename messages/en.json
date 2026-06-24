@@ -9,7 +9,7 @@
   },
   "hero": {
     "headline": "Your Medical Journey to Russia Starts Here",
-    "subheadline": "With Dr. Saeed Alziyadi, experience world-class medical care at Moscow's finest hospitals — affordable, comprehensive, and fully supported in Arabic",
+    "subheadline": "With AlziyadiMed, experience world-class medical care at Moscow's finest hospitals — affordable, comprehensive, and fully supported in Arabic",
     "ctaPrimary": "Contact Us on WhatsApp",
     "ctaSecondary": "Explore Our Services",
     "badge1": "10+ Years Experience",
@@ -131,6 +131,7 @@
     "submitting": "Submitting...",
     "successTitle": "Your Request Has Been Submitted",
     "successText": "Thank you for reaching out. Our team will review your request and contact you as soon as possible",
+    "errorText": "Something went wrong while submitting your request. Please try again.",
     "countries": {
       "sa": "Saudi Arabia",
       "ae": "United Arab Emirates",
@@ -166,14 +167,14 @@
   "contact": {
 		"title": "Contact Us Now",
 		"subtitle": "Our team is available around the clock to answer your questions and organize your medical journey",
-		"email": "drsaeedalziyadi@gmail.com",
+		"email": "info@alziyadimed.com",
 		"address": "Moscow, Russian Federation",
 		"whatsapp1": "+7 925 250 0066",
 		"whatsapp3": "+7 925 258 0005"
   },
   "footer": {
     "tagline": "Your medical journey to Russia in trusted hands",
-    "copyright": "All rights reserved — Dr. Saeed Alziyadi Medical Tourism",
+    "copyright": "All rights reserved — AlziyadiMed Medical Tourism",
     "certified": "Certified by the Russian Ministry of Health | Trusted Medical Partner since 2013",
     "links": {
       "privacy": "Privacy Policy",

@@ -16,7 +16,15 @@ const SPECIALTY_CODES = [
 const ACCEPTED_TYPES = ['application/pdf', 'image/jpeg', 'image/jpg', 'image/png'];
 const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
 
-export default function RequestForm() {
+const API_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:4000';
+
+interface RequestFormProps {
+  source?: 'home' | 'blog';
+  articleSlug?: string;
+  locale?: string;
+}
+
+export default function RequestForm({ source = 'home', articleSlug, locale }: RequestFormProps) {
   const t = useTranslations('requestForm');
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -24,6 +32,7 @@ export default function RequestForm() {
   const [isDragging, setIsDragging] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   function addFiles(incoming: FileList | null) {
     if (!incoming) return;
@@ -43,15 +52,30 @@ export default function RequestForm() {
     addFiles(e.dataTransfer.files);
   }
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setError(null);
     setIsSubmitting(true);
 
-    // TODO: wire up backend submission (API route / server action) once ready.
-    setTimeout(() => {
-      setIsSubmitting(false);
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    fd.set('source', source);
+    if (articleSlug) fd.set('articleSlug', articleSlug);
+    if (locale) fd.set('locale', locale);
+    files.forEach((file) => fd.append('files', file));
+
+    try {
+      const res = await fetch(`${API_URL}/api/leads`, {
+        method: 'POST',
+        body: fd,
+      });
+      if (!res.ok) throw new Error('Request failed');
       setSubmitted(true);
-    }, 600);
+    } catch {
+      setError(t('errorText'));
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   const labelClass = 'block text-sm font-medium text-[var(--color-text)] mb-1.5';
@@ -220,6 +244,12 @@ export default function RequestForm() {
                   </ul>
                 )}
               </div>
+
+              {error && (
+                <p className="text-sm text-red-500" role="alert">
+                  {error}
+                </p>
+              )}
 
               <button
                 type="submit"

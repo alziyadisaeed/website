@@ -6,9 +6,10 @@ import { connectDB } from '@/lib/mongodb';
 import Article from '@/lib/models/Article';
 import { sanitizeHtml } from '@/lib/sanitize';
 import JsonLd from '@/components/seo/JsonLd';
+import RequestForm from '@/components/sections/RequestForm';
 import Link from 'next/link';
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://drsaeedalziyadi.com';
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://alziyadimed.com';
 
 interface ArticleDoc {
   _id: string;
@@ -60,7 +61,7 @@ export async function generateMetadata({
   if (!article) return { title: 'Article Not Found' };
 
   return {
-    title: `${article.title} | Dr. Saeed Alziyadi`,
+    title: `${article.title} | AlziyadiMed`,
     description: article.excerpt,
     alternates: {
       canonical: `${baseUrl}/${locale}/blog/${slug}`,
@@ -132,7 +133,7 @@ export default async function ArticlePage({
     publisher: {
       '@type': 'MedicalOrganization',
       '@id': `${baseUrl}/#organization`,
-      name: 'Dr. Saeed Alziyadi Medical Tourism',
+      name: 'AlziyadiMed Medical Tourism',
     },
     description: article.excerpt,
     inLanguage: locale,
@@ -224,6 +225,8 @@ export default async function ArticlePage({
             </a>
           </div>
         </div>
+
+        <RequestForm source="blog" articleSlug={article.slug} locale={locale} />
       </div>
     </>
   );

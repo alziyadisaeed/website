@@ -12,7 +12,9 @@
       "Bash(npx tsc *)",
       "Bash(npx eslint *)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/ar)",
-      "Read(//tmp/**)"
+      "Read(//tmp/**)",
+      "Bash(perl -i -pe 's/drsaeedalziyadi\\\\@gmail\\\\.com/info\\\\@alziyadimed.com/g' messages/ar.json messages/ru.json)",
+      "Bash(perl -i -pe 's/جميع الحقوق محفوظة لشركة الدكتور سعيد الزيادي للسياحة العلاجية/جميع الحقوق محفوظة لشركة ألزيادي ميد للسياحة العلاجية/' messages/ar.json)"
     ]
   }
 }

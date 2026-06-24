@@ -36,7 +36,7 @@ export default async function Navbar({ locale }: NavbarProps) {
             </div>
             <div className="leading-tight">
               <div className="font-bold text-[var(--color-text)] text-sm sm:text-base">
-                Dr. Saeed Alziyadi
+                AlziyadiMed
               </div>
               <div className="text-xs text-[var(--color-text-muted)] hidden sm:block">
                 Medical Tourism Russia

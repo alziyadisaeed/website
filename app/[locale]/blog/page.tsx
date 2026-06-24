@@ -5,12 +5,12 @@ import { connectDB } from '@/lib/mongodb';
 import Article from '@/lib/models/Article';
 import { unstable_cache } from 'next/cache';
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://drsaeedalziyadi.com';
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://alziyadimed.com';
 
 const titles: Record<string, string> = {
-  ar: 'المدونة | د. سعيد الزيادي للسياحة العلاجية',
-  en: 'Blog | Dr. Saeed Alziyadi Medical Tourism',
-  ru: 'Блог | Медицинский туризм Доктора Саида',
+  ar: 'المدونة | ألزيادي ميد للسياحة العلاجية',
+  en: 'Blog | AlziyadiMed Medical Tourism',
+  ru: 'Блог | Медицинский туризм AlziyadiMed',
 };
 
 const descriptions: Record<string, string> = {

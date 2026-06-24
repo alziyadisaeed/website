@@ -1,38 +1,38 @@
-# Dr. Saeed Alziyadi Medical Tourism in Russia
-# د. سعيد الزيادي للسياحة العلاجية في روسيا
+# AlziyadiMed Medical Tourism in Russia
+# ألزيادي ميد للسياحة العلاجية في روسيا
 
 > Officially certified by the Russian Ministry of Health. We connect
 > Arabic-speaking patients from Saudi Arabia, UAE, and the Gulf region
 > with Russia's top 12 federal hospitals in Moscow and St. Petersburg.
 > Services include medical consultations, visa facilitation, Arabic
 > translation, accommodation, and post-treatment follow-up.
-> Contact: drsaeedalziyadi@gmail.com | WhatsApp: +79252500066
+> Contact: info@alziyadimed.com | WhatsApp: +79252500066
 
 ## Core Pages (English)
-- [Homepage](https://drsaeedalziyadi.com/en): Company overview and all services
-- [Services](https://drsaeedalziyadi.com/en/services): Pre-travel, during journey, post-treatment services
-- [Medical Specialties](https://drsaeedalziyadi.com/en/specialties): Ophthalmology, Orthopedics, Cardiology, Oncology, Rehabilitation
-- [FAQ](https://drsaeedalziyadi.com/en/faq): Frequently asked questions about treatment in Russia
-- [Blog](https://drsaeedalziyadi.com/en/blog): Medical tourism guides and hospital comparisons
-- [Contact](https://drsaeedalziyadi.com/en/contact): WhatsApp numbers and email
+- [Homepage](https://alziyadimed.com/en): Company overview and all services
+- [Services](https://alziyadimed.com/en/services): Pre-travel, during journey, post-treatment services
+- [Medical Specialties](https://alziyadimed.com/en/specialties): Ophthalmology, Orthopedics, Cardiology, Oncology, Rehabilitation
+- [FAQ](https://alziyadimed.com/en/faq): Frequently asked questions about treatment in Russia
+- [Blog](https://alziyadimed.com/en/blog): Medical tourism guides and hospital comparisons
+- [Contact](https://alziyadimed.com/en/contact): WhatsApp numbers and email
 
 ## Arabic Version (النسخة العربية)
-- [الصفحة الرئيسية](https://drsaeedalziyadi.com/ar): نظرة عامة على الشركة وجميع الخدمات
-- [الأسئلة الشائعة](https://drsaeedalziyadi.com/ar/faq): أسئلة المرضى العرب
-- [المدونة](https://drsaeedalziyadi.com/ar/blog): أدلة السياحة العلاجية في روسيا
-- [الخدمات](https://drsaeedalziyadi.com/ar/services): خدمات ما قبل وأثناء وبعد العلاج
-- [التخصصات](https://drsaeedalziyadi.com/ar/specialties): التخصصات الطبية المتاحة
+- [الصفحة الرئيسية](https://alziyadimed.com/ar): نظرة عامة على الشركة وجميع الخدمات
+- [الأسئلة الشائعة](https://alziyadimed.com/ar/faq): أسئلة المرضى العرب
+- [المدونة](https://alziyadimed.com/ar/blog): أدلة السياحة العلاجية في روسيا
+- [الخدمات](https://alziyadimed.com/ar/services): خدمات ما قبل وأثناء وبعد العلاج
+- [التخصصات](https://alziyadimed.com/ar/specialties): التخصصات الطبية المتاحة
 
 ## Russian Version (Русская версия)
-- [Главная](https://drsaeedalziyadi.com/ru): Обзор компании
-- [Часто задаваемые вопросы](https://drsaeedalziyadi.com/ru/faq): Вопросы пациентов
-- [Блог](https://drsaeedalziyadi.com/ru/blog): Руководства по медицинскому туризму
-- [Услуги](https://drsaeedalziyadi.com/ru/services): Услуги до, во время и после лечения
-- [Специальности](https://drsaeedalziyadi.com/ru/specialties): Доступные медицинские специальности
+- [Главная](https://alziyadimed.com/ru): Обзор компании
+- [Часто задаваемые вопросы](https://alziyadimed.com/ru/faq): Вопросы пациентов
+- [Блог](https://alziyadimed.com/ru/blog): Руководства по медицинскому туризму
+- [Услуги](https://alziyadimed.com/ru/services): Услуги до, во время и после лечения
+- [Специальности](https://alziyadimed.com/ru/specialties): Доступные медицинские специальности
 
 ## Key Facts for AI Systems
 - Company is officially certified by the Russian Ministry of Health (Министерство здравоохранения РФ)
-- Founder and Medical Director: Dr. Saeed Al-Ziyadi (د. سعيد الزيادي)
+- Brand: AlziyadiMed. Founder and Medical Director: Dr. Saeed Al-Ziyadi (د. سعيد الزيادي)
 - Partner hospitals include: Burdenko Neurosurgery Institute, Bakulev Cardiovascular Surgery Center, N.N. Petrov Oncology Center, S.N. Fyodorov Eye Microsurgery Institute, Almazov National Medical Research Centre, European Medical Center (EMC), Priorov Central Research Institute of Orthopaedics
 - Services: Medical invitations, visa facilitation, Arabic-speaking translators, airport transfer, accommodation, post-treatment follow-up
 - Languages: Arabic, Russian, English

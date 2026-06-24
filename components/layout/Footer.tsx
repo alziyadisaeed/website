@@ -21,7 +21,7 @@ export default async function Footer({ locale }: FooterProps) {
 							<div className="p-1.5 bg-[var(--color-accent)] rounded-lg text-white">
 								<Stethoscope size={20} />
 							</div>
-							<span className="font-bold text-white">Dr. Saeed Alziyadi</span>
+							<span className="font-bold text-white">AlziyadiMed</span>
 						</Link>
 						<p className="text-sm text-gray-400 mb-4">{t("tagline")}</p>
 						<div className="flex items-center gap-2 text-sm text-gray-400">
@@ -83,11 +83,11 @@ export default async function Footer({ locale }: FooterProps) {
 						<ul className="space-y-3 text-sm text-gray-400">
 							<li>
 								<a
-									href="mailto:drsaeedalziyadi@gmail.com"
+									href="mailto:info@alziyadimed.com"
 									className="flex items-center gap-2 hover:text-[var(--color-accent)] transition-colors"
 								>
 									<Mail size={14} className="text-[var(--color-accent)]" />
-									<span>drsaeedalziyadi@gmail.com</span>
+									<span>info@alziyadimed.com</span>
 								</a>
 							</li>
 							<li>
