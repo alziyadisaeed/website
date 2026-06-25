@@ -29,30 +29,32 @@
     "title": "Our Services",
     "card1Title": "Before Travel",
     "card1Items": [
-      "Free medical consultation",
-      "Coordination with Russian doctors",
+      "Free case review by our medical team",
+      "Choosing the right hospital and specialty",
       "Medical file translation",
-      "Hospital and appointment booking",
+      "Remote consultation with Russian specialists",
+      "Booking appointments before arrival",
       "Medical visa assistance",
-      "Accommodation arrangements"
+      "Accommodation and reception arrangements"
     ],
     "card2Title": "During Your Journey",
     "card2Items": [
-      "Airport reception",
+      "Airport pickup and drop-off",
+      "Equipped ambulance pickup for non-ambulant patients",
       "Medical interpreter provided",
-      "Accompaniment to appointments",
+      "Medical accompaniment to appointments",
       "Nursing team coordination",
       "Treatment pathway supervision",
-      "Psychological and family support"
+      "Home care for non-ambulant patients when needed"
     ],
     "card3Title": "After Treatment",
     "card3Items": [
-      "Remote periodic follow-up",
+      "Remote follow-up with Russian doctors",
+      "Remote review of test results in your country",
       "Post-treatment report translation",
-      "Coordination with local doctor",
+      "Coordination with your local doctor",
       "Emergency support",
-      "Customized recovery plan",
-      "Ongoing consultations"
+      "Customized recovery plans"
     ]
   },
   "specialties": {
