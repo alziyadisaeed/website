@@ -52,30 +52,30 @@ export default async function SpecialtiesPage({
   const breadcrumb = await getTranslations({ locale, namespace: 'breadcrumb' });
 
   const detailsMap: Record<string, string[]> = {
-    ar: [
-      'تتميز المستشفيات الروسية بأحدث تقنيات جراحة العيون، بما في ذلك الليزك المتطور، وتصحيح الإبصار بالليزر الفيمتوثانية، وزرع العدسات متعددة البؤر. تحقق نسب نجاح تصل إلى 98%.',
-      'تعتبر روسيا من أكثر الدول تقدماً في جراحة العظام وتركيب المفاصل الاصطناعية. تُستخدم أحدث تقنيات الحد الأدنى من الجراحة بأسعار تنافسية مقارنة بأوروبا.',
-      'تحتضن موسكو عدة مراكز قلب متخصصة بمستوى عالمي تقدم خدمات القسطرة والجراحة المفتوحة وتركيب الصمامات والأجهزة الإيقاعية باحترافية عالية.',
-      'تتقدم أبحاث علاج السرطان في روسيا بخطى متسارعة. تتوفر أحدث بروتوكولات العلاج الكيميائي والمناعي والإشعاعي في مراكز متخصصة.',
-      'تتمتع روسيا بكفاءة عالية في جراحات الدماغ والأعصاب الشوكية، بالإضافة إلى علاج الأمراض العصبية التنكسية كالشلل الرعاش والتصلب اللويحي.',
-      'تقدم روسيا برامج إعادة تأهيل متطورة بعد الجلطات الدماغية والعمليات الجراحية، مع توفير الأطراف الصناعية الحديثة وفرق إعادة تأهيل متخصصة.',
-    ],
-    en: [
-      'Russian hospitals excel in the latest eye surgery technologies, including advanced LASIK, femtosecond laser vision correction, and multifocal intraocular lens implantation. Success rates reach up to 98%.',
-      'Russia is among the most advanced countries in orthopedic surgery and joint replacement. The latest minimally invasive techniques are used at competitive prices compared to Europe.',
-      'Moscow hosts several world-class specialized cardiac centers offering catheterization, open-heart surgery, valve replacement, and pacemaker implantation with high professionalism.',
-      'Cancer treatment research in Russia is advancing rapidly. The latest chemotherapy, immunotherapy, and radiotherapy protocols are available at specialized centers.',
-      'Russia has high expertise in brain and spinal cord surgeries, as well as treating neurodegenerative diseases such as Parkinson\'s disease and multiple sclerosis.',
-      'Russia offers advanced rehabilitation programs after strokes and surgeries, with modern prosthetic limbs and specialized rehabilitation teams.',
-    ],
-    ru: [
-      'Российские больницы превосходят по уровню новейших технологий глазной хирургии, включая передовой LASIK, фемтосекундную лазерную коррекцию зрения и мультифокальные интраокулярные линзы. Показатели успеха достигают 98%.',
-      'Россия входит в число наиболее передовых стран в области ортопедической хирургии и протезирования суставов. Применяются новейшие малоинвазивные методики по конкурентным ценам по сравнению с Европой.',
-      'В Москве расположено несколько специализированных кардиологических центров мирового уровня, предоставляющих услуги катетеризации, операции на открытом сердце, замены клапанов и кардиостимуляторов.',
-      'Исследования в области лечения онкологических заболеваний в России стремительно развиваются. В специализированных центрах доступны новейшие протоколы химиотерапии, иммунотерапии и лучевой терапии.',
-      'Россия обладает высокими компетенциями в области хирургии головного и спинного мозга, а также в лечении нейродегенеративных заболеваний, таких как болезнь Паркинсона и рассеянный склероз.',
-      'Россия предлагает передовые программы реабилитации после инсультов и операций, с современными протезами и специализированными реабилитационными командами.',
-    ],
+		ar: [
+			"تتميز المستشفيات الروسية بأحدث تقنيات جراحة العيون، بما في ذلك الليزك المتطور، وتصحيح الإبصار بالليزر الفيمتوثانية، وزرع العدسات متعددة البؤر. تحقق نسب نجاح تصل إلى 98%.",
+			"تعتبر روسيا من أكثر الدول تقدماً في جراحة العظام وتركيب المفاصل الصناعية. تُستخدم أحدث تقنيات الحد الأدنى من الجراحة بأسعار تنافسية مقارنة بأوروبا.",
+			"تحتضن موسكو عدة مراكز قلب متخصصة بمستوى عالمي تقدم خدمات القسطرة والجراحة المفتوحة وتركيب الصمامات والأجهزة الإيقاعية باحترافية عالية.",
+			"تتقدم أبحاث علاج السرطان في روسيا بخطى متسارعة. تتوفر أحدث بروتوكولات العلاج الكيميائي والمناعي والإشعاعي في مراكز متخصصة.",
+			"تتمتع روسيا بكفاءة عالية في جراحات الدماغ والأعصاب الشوكية، بالإضافة إلى علاج الأمراض العصبية التنكسية كالشلل الرعاش والتصلب اللويحي.",
+			"تقدم روسيا برامج إعادة تأهيل متطورة بعد الجلطات الدماغية والعمليات الجراحية، مع توفير الأطراف الصناعية الحديثة وفرق إعادة تأهيل متخصصة.",
+		],
+		en: [
+			"Russian hospitals excel in the latest eye surgery technologies, including advanced LASIK, femtosecond laser vision correction, and multifocal intraocular lens implantation. Success rates reach up to 98%.",
+			"Russia is among the most advanced countries in orthopedic surgery and joint replacement. The latest minimally invasive techniques are used at competitive prices compared to Europe.",
+			"Moscow hosts several world-class specialized cardiac centers offering catheterization, open-heart surgery, valve replacement, and pacemaker implantation with high professionalism.",
+			"Cancer treatment research in Russia is advancing rapidly. The latest chemotherapy, immunotherapy, and radiotherapy protocols are available at specialized centers.",
+			"Russia has high expertise in brain and spinal cord surgeries, as well as treating neurodegenerative diseases such as Parkinson's disease and multiple sclerosis.",
+			"Russia offers advanced rehabilitation programs after strokes and surgeries, with modern prosthetic limbs and specialized rehabilitation teams.",
+		],
+		ru: [
+			"Российские больницы превосходят по уровню новейших технологий глазной хирургии, включая передовой LASIK, фемтосекундную лазерную коррекцию зрения и мультифокальные интраокулярные линзы. Показатели успеха достигают 98%.",
+			"Россия входит в число наиболее передовых стран в области ортопедической хирургии и протезирования суставов. Применяются новейшие малоинвазивные методики по конкурентным ценам по сравнению с Европой.",
+			"В Москве расположено несколько специализированных кардиологических центров мирового уровня, предоставляющих услуги катетеризации, операции на открытом сердце, замены клапанов и кардиостимуляторов.",
+			"Исследования в области лечения онкологических заболеваний в России стремительно развиваются. В специализированных центрах доступны новейшие протоколы химиотерапии, иммунотерапии и лучевой терапии.",
+			"Россия обладает высокими компетенциями в области хирургии головного и спинного мозга, а также в лечении нейродегенеративных заболеваний, таких как болезнь Паркинсона и рассеянный склероз.",
+			"Россия предлагает передовые программы реабилитации после инсультов и операций, с современными протезами и специализированными реабилитационными командами.",
+		],
   };
 
   const specialties = [
