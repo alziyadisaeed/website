@@ -37,48 +37,48 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL ?? 'https://alziyadimed.com'),
+	metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL ?? "https://Alziyadi Med.com"),
 };
 
 export function generateStaticParams() {
   return [{ locale: 'ar' }, { locale: 'en' }, { locale: 'ru' }];
 }
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://alziyadimed.com';
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "https://Alziyadi Med.com";
 
 const organizationJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'MedicalOrganization',
-  name: 'AlziyadiMed',
-  url: baseUrl,
-  logo: `${baseUrl}/logo.png`,
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Moscow',
-    addressCountry: 'RU',
-  },
-  contactPoint: [
-    {
-      '@type': 'ContactPoint',
-      telephone: '+79252500066',
-      contactType: 'customer service',
-      contactOption: 'TollFree',
-      availableLanguage: ['Arabic', 'Russian', 'English'],
-    },
-  ],
-  sameAs: [],
+	"@context": "https://schema.org",
+	"@type": "MedicalOrganization",
+	name: "Alziyadi Med",
+	url: baseUrl,
+	logo: `${baseUrl}/logo.png`,
+	address: {
+		"@type": "PostalAddress",
+		addressLocality: "Moscow",
+		addressCountry: "RU",
+	},
+	contactPoint: [
+		{
+			"@type": "ContactPoint",
+			telephone: "+79252500066",
+			contactType: "customer service",
+			contactOption: "TollFree",
+			availableLanguage: ["Arabic", "Russian", "English"],
+		},
+	],
+	sameAs: [],
 };
 
 const personJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: 'Dr. Saeed Alziyadi',
-  jobTitle: 'Treatment in Russia Specialist',
-  worksFor: {
-    '@type': 'MedicalOrganization',
-    name: 'AlziyadiMed',
-  },
-  url: baseUrl,
+	"@context": "https://schema.org",
+	"@type": "Person",
+	name: "Dr. Saeed Alziyadi",
+	jobTitle: "Treatment in Russia Specialist",
+	worksFor: {
+		"@type": "MedicalOrganization",
+		name: "Alziyadi Med",
+	},
+	url: baseUrl,
 };
 
 export default async function LocaleLayout({

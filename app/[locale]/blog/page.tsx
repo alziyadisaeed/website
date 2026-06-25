@@ -5,12 +5,12 @@ import { connectDB } from '@/lib/mongodb';
 import Article from '@/lib/models/Article';
 import { unstable_cache } from 'next/cache';
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://alziyadimed.com';
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "https://Alziyadi Med.com";
 
 const titles: Record<string, string> = {
 	ar: "المدونة | الزيادي ميد للعلاج في روسيا",
-	en: "Blog | AlziyadiMed Treatment in Russia",
-	ru: "Блог | Лечение в России AlziyadiMed",
+	en: "Blog | Alziyadi Med Treatment in Russia",
+	ru: "Блог | Лечение в России Alziyadi Med",
 };
 
 const descriptions: Record<string, string> = {

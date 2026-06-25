@@ -8,24 +8,24 @@
     "contact": "Contact"
   },
   "hero": {
-    "headline": "Your Treatment Journey to Russia Starts Here",
-    "subheadline": "With AlziyadiMed, experience world-class medical care at Moscow's finest hospitals — affordable, comprehensive, and fully supported in Arabic",
-    "ctaPrimary": "Contact Us on WhatsApp",
-    "ctaSecondary": "Explore Our Services",
-    "badge1": "8+ Years Experience",
-    "badge2": "500+ Patients Served",
-    "badge3": "Top Moscow Hospitals",
-    "badge4": "Full Arabic Support"
+		"headline": "Your Treatment Journey to Russia Starts Here",
+		"subheadline": "With Alziyadi Med, experience world-class medical care at Moscow's finest hospitals — affordable, comprehensive, and fully supported in Arabic",
+		"ctaPrimary": "Contact Us on WhatsApp",
+		"ctaSecondary": "Explore Our Services",
+		"badge1": "8+ Years Experience",
+		"badge2": "500+ Patients Served",
+		"badge3": "Top Moscow Hospitals",
+		"badge4": "Full Arabic Support"
   },
   "about": {
-    "title": "About Us",
-    "text": "We are an elite team of Arab doctors working in the Russian Ministry of Health under the direct supervision of Dr. Saeed Alziyadi. We offer a comprehensive service that begins with coordinating with the best Russian doctors, through accurate medical translation, accommodation and transport, all the way to post-treatment follow-up.",
-    "card1": "Team of Specialized Arab Doctors",
-    "card2": "Comprehensive Arabic-Language Service",
-    "card3": "Top Hospital Partnerships",
-    "card4": "Post-Treatment Follow-Up",
-    "imageTitle": "AlziyadiMed",
-    "imageSubtitle": "Led by Dr. Saeed Alziyadi, Orthopedic Specialist & Company CEO"
+		"title": "About Us",
+		"text": "We are an elite team of Arab doctors working in the Russian Ministry of Health under the direct supervision of Dr. Saeed Alziyadi. We offer a comprehensive service that begins with coordinating with the best Russian doctors, through accurate medical translation, accommodation and transport, all the way to post-treatment follow-up.",
+		"card1": "Team of Specialized Arab Doctors",
+		"card2": "Comprehensive Arabic-Language Service",
+		"card3": "Top Hospital Partnerships",
+		"card4": "Post-Treatment Follow-Up",
+		"imageTitle": "Alziyadi Med",
+		"imageSubtitle": "Led by Dr. Saeed Alziyadi, Orthopedic Specialist & Company CEO"
   },
   "services": {
     "title": "Our Services",
@@ -76,8 +76,8 @@
   },
   "whyUs": {
     "title": "Why Choose Us?",
-    "row1Title": "Over a Decade of Experience",
-    "row1Desc": "More than 10 years facilitating medical journeys for Arab patients to Russia with a proven track record of success",
+    "row1Title": "Over 8 Years of Experience",
+    "row1Desc": "More than 8 years facilitating medical journeys for Arab patients to Russia with a proven track record of success",
     "row2Title": "Trusted Partnerships",
     "row2Desc": "Established partnerships with the finest hospitals and medical centers in Moscow and St. Petersburg, and relationships with colleague doctors in hospitals that facilitate communicating cases medically and professionally and accelerating admission procedures",
     "row3Title": "Arabic-Language Service",
@@ -171,14 +171,14 @@
   "contact": {
 		"title": "Contact Us Now",
 		"subtitle": "Our team is available around the clock to answer your questions and organize your medical journey",
-		"email": "info@alziyadimed.com",
+		"email": "info@Alziyadi Med.com",
 		"address": "Moscow, Russian Federation",
 		"whatsapp1": "+7 925 250 0066",
 		"whatsapp3": "+7 925 258 0005"
   },
   "footer": {
 		"tagline": "Your medical journey to Russia in trusted hands",
-		"copyright": "All rights reserved — AlziyadiMed Treatment in Russia",
+		"copyright": "All rights reserved — Alziyadi Med Treatment in Russia",
 		"certified": "Certified by the Russian Ministry of Health | Trusted Medical Partner since 2017",
 		"links": {
 			"privacy": "Privacy Policy",

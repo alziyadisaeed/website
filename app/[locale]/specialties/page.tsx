@@ -4,12 +4,12 @@ import { Eye, Bone, Heart, Ribbon, Activity, Users } from 'lucide-react';
 import JsonLd from '@/components/seo/JsonLd';
 import Link from 'next/link';
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://alziyadimed.com';
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "https://Alziyadi Med.com";
 
 const titles: Record<string, string> = {
 	ar: "التخصصات الطبية | الزيادي ميد",
-	en: "Medical Specialties | AlziyadiMed",
-	ru: "Медицинские специализации | AlziyadiMed",
+	en: "Medical Specialties | Alziyadi Med",
+	ru: "Медицинские специализации | Alziyadi Med",
 };
 
 const descriptions: Record<string, string> = {

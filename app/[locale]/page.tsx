@@ -12,12 +12,12 @@ import ContactCTA from '@/components/sections/ContactCTA';
 import JsonLd from '@/components/seo/JsonLd';
 import { getTranslations } from 'next-intl/server';
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://alziyadimed.com';
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "https://Alziyadi Med.com";
 
 const titles: Record<string, string> = {
 	ar: "الزيادي ميد | العلاج في روسيا",
-	en: "AlziyadiMed | Treatment in Russia",
-	ru: "AlziyadiMed | Медицинский туризм в России",
+	en: "Alziyadi Med | Treatment in Russia",
+	ru: "Alziyadi Med | Медицинский туризм в России",
 };
 
 const descriptions: Record<string, string> = {
@@ -34,24 +34,24 @@ export async function generateMetadata({
   const { locale } = await params;
 
   return {
-    title: titles[locale] ?? titles.ar,
-    description: descriptions[locale] ?? descriptions.ar,
-    alternates: {
-      canonical: `${baseUrl}/${locale}`,
-      languages: {
-        ar: `${baseUrl}/ar`,
-        en: `${baseUrl}/en`,
-        ru: `${baseUrl}/ru`,
-      },
-    },
-    openGraph: {
-      title: titles[locale] ?? titles.ar,
-      description: descriptions[locale] ?? descriptions.ar,
-      url: `${baseUrl}/${locale}`,
-      siteName: 'AlziyadiMed Treatment in Russia',
-      locale: locale,
-      type: 'website',
-    },
+		title: titles[locale] ?? titles.ar,
+		description: descriptions[locale] ?? descriptions.ar,
+		alternates: {
+			canonical: `${baseUrl}/${locale}`,
+			languages: {
+				ar: `${baseUrl}/ar`,
+				en: `${baseUrl}/en`,
+				ru: `${baseUrl}/ru`,
+			},
+		},
+		openGraph: {
+			title: titles[locale] ?? titles.ar,
+			description: descriptions[locale] ?? descriptions.ar,
+			url: `${baseUrl}/${locale}`,
+			siteName: "Alziyadi Med Treatment in Russia",
+			locale: locale,
+			type: "website",
+		},
   };
 }
 
@@ -83,17 +83,17 @@ export default async function HomePage({
   };
 
   const serviceJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: titles[locale],
-    description: descriptions[locale],
-    provider: {
-      '@type': 'MedicalOrganization',
-      name: 'AlziyadiMed Treatment in Russia',
-      url: baseUrl,
-    },
-    areaServed: ['RU', 'SA', 'AE', 'KW', 'QA', 'BH', 'OM'],
-    serviceType: 'Treatment in Russia',
+		"@context": "https://schema.org",
+		"@type": "Service",
+		name: titles[locale],
+		description: descriptions[locale],
+		provider: {
+			"@type": "MedicalOrganization",
+			name: "Alziyadi Med Treatment in Russia",
+			url: baseUrl,
+		},
+		areaServed: ["RU", "SA", "AE", "KW", "QA", "BH", "OM"],
+		serviceType: "Treatment in Russia",
   };
 
   return (

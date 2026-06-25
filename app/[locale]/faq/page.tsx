@@ -3,18 +3,18 @@ import { getTranslations } from 'next-intl/server';
 import JsonLd from '@/components/seo/JsonLd';
 import Link from 'next/link';
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://alziyadimed.com';
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "https://Alziyadi Med.com";
 
 const titles: Record<string, string> = {
 	ar: "الأسئلة الشائعة | الزيادي ميد",
-	en: "FAQ | AlziyadiMed",
-	ru: "Вопросы и ответы | AlziyadiMed",
+	en: "FAQ | Alziyadi Med",
+	ru: "Вопросы и ответы | Alziyadi Med",
 };
 
 const descriptions: Record<string, string> = {
 	ar: "إجابات على أكثر الأسئلة شيوعاً حول العلاج في روسيا مع فريق الزيادي ميد.",
-	en: "Answers to the most common questions about treatment in Russia with AlziyadiMed.",
-	ru: "Ответы на наиболее часто задаваемые вопросы о лечении в России с AlziyadiMed.",
+	en: "Answers to the most common questions about treatment in Russia with Alziyadi Med.",
+	ru: "Ответы на наиболее часто задаваемые вопросы о лечении в России с Alziyadi Med.",
 };
 
 type FaqItem = { q: string; a: string };

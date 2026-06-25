@@ -4,12 +4,12 @@ import { PlaneTakeoff, Hospital, HeartPulse, Check } from 'lucide-react';
 import JsonLd from '@/components/seo/JsonLd';
 import Link from 'next/link';
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://alziyadimed.com';
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "https://Alziyadi Med.com";
 
 const titles: Record<string, string> = {
 	ar: "خدماتنا | الزيادي ميد",
-	en: "Our Services | AlziyadiMed",
-	ru: "Наши услуги | AlziyadiMed",
+	en: "Our Services | Alziyadi Med",
+	ru: "Наши услуги | Alziyadi Med",
 };
 
 const descriptions: Record<string, string> = {

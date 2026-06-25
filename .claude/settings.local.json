@@ -1,20 +1,20 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npx create-next-app@latest . --typescript --tailwind --app --no-src-dir --import-alias \"@/*\" --yes)",
-      "Bash(npm install *)",
-      "Bash(npx shadcn@latest init -y)",
-      "Bash(npx shadcn@latest add button table dialog input textarea select badge card --yes)",
-      "Bash(npm run *)",
-      "Bash(node -e \"const nc = require\\('D:/_____work/dr_saeed/node_modules/next/dist/server/web/exports/cache.js'\\); console.log\\(Object.keys\\(nc\\)\\)\")",
-      "Bash(xargs grep *)",
-      "Bash(node *)",
-      "Bash(npx tsc *)",
-      "Bash(npx eslint *)",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/ar)",
-      "Read(//tmp/**)",
-      "Bash(perl -i -pe 's/drsaeedalziyadi\\\\@gmail\\\\.com/info\\\\@alziyadimed.com/g' messages/ar.json messages/ru.json)",
-      "Bash(perl -i -pe 's/جميع الحقوق محفوظة لشركة الدكتور سعيد الزيادي للسياحة العلاجية/جميع الحقوق محفوظة لشركة الزيادي ميد للسياحة العلاجية/' messages/ar.json)"
-    ]
+		"Bash(npx create-next-app@latest . --typescript --tailwind --app --no-src-dir --import-alias \"@/*\" --yes)",
+		"Bash(npm install *)",
+		"Bash(npx shadcn@latest init -y)",
+		"Bash(npx shadcn@latest add button table dialog input textarea select badge card --yes)",
+		"Bash(npm run *)",
+		"Bash(node -e \"const nc = require\\('D:/_____work/dr_saeed/node_modules/next/dist/server/web/exports/cache.js'\\); console.log\\(Object.keys\\(nc\\)\\)\")",
+		"Bash(xargs grep *)",
+		"Bash(node *)",
+		"Bash(npx tsc *)",
+		"Bash(npx eslint *)",
+		"Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/ar)",
+		"Read(//tmp/**)",
+		"Bash(perl -i -pe 's/drsaeedalziyadi\\\\@gmail\\\\.com/info\\\\@Alziyadi Med.com/g' messages/ar.json messages/ru.json)",
+		"Bash(perl -i -pe 's/جميع الحقوق محفوظة لشركة الدكتور سعيد الزيادي للسياحة العلاجية/جميع الحقوق محفوظة لشركة الزيادي ميد للسياحة العلاجية/' messages/ar.json)"
+	]
   }
 }

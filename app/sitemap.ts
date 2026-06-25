@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 import { connectDB } from '@/lib/mongodb';
 import Article from '@/lib/models/Article';
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://alziyadimed.com';
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "https://Alziyadi Med.com";
 const locales = ['ar', 'en', 'ru'] as const;
 
 const staticPages = [

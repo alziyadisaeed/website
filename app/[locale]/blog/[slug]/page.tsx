@@ -9,7 +9,7 @@ import JsonLd from '@/components/seo/JsonLd';
 import RequestForm from '@/components/sections/RequestForm';
 import Link from 'next/link';
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://alziyadimed.com';
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "https://Alziyadi Med.com";
 
 interface ArticleDoc {
   _id: string;
@@ -61,19 +61,19 @@ export async function generateMetadata({
   if (!article) return { title: 'Article Not Found' };
 
   return {
-    title: `${article.title} | AlziyadiMed`,
-    description: article.excerpt,
-    alternates: {
-      canonical: `${baseUrl}/${locale}/blog/${slug}`,
-    },
-    openGraph: {
-      title: article.title,
-      description: article.excerpt,
-      type: 'article',
-      publishedTime: String(article.publishedAt),
-      modifiedTime: String(article.updatedAt),
-      authors: [article.author],
-    },
+		title: `${article.title} | Alziyadi Med`,
+		description: article.excerpt,
+		alternates: {
+			canonical: `${baseUrl}/${locale}/blog/${slug}`,
+		},
+		openGraph: {
+			title: article.title,
+			description: article.excerpt,
+			type: "article",
+			publishedTime: String(article.publishedAt),
+			modifiedTime: String(article.updatedAt),
+			authors: [article.author],
+		},
   };
 }
 
@@ -120,32 +120,32 @@ export default async function ArticlePage({
   const safeHtml = sanitizeHtml(article.content);
 
   const articleJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: article.title,
-    datePublished: new Date(article.publishedAt).toISOString(),
-    dateModified: new Date(article.updatedAt).toISOString(),
-    author: {
-      '@type': 'Person',
-      '@id': `${baseUrl}/#dr-saeed`,
-      name: article.author,
-    },
-    publisher: {
-      '@type': 'MedicalOrganization',
-      '@id': `${baseUrl}/#organization`,
-      name: 'AlziyadiMed Treatment in Russia',
-    },
-    description: article.excerpt,
-    inLanguage: locale,
-    wordCount: article.wordCount,
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': `${baseUrl}/${locale}/blog/${slug}`,
-    },
-    speakable: {
-      '@type': 'SpeakableSpecification',
-      cssSelector: ['h1', '.article-excerpt', '.article-content h2'],
-    },
+		"@context": "https://schema.org",
+		"@type": "Article",
+		headline: article.title,
+		datePublished: new Date(article.publishedAt).toISOString(),
+		dateModified: new Date(article.updatedAt).toISOString(),
+		author: {
+			"@type": "Person",
+			"@id": `${baseUrl}/#dr-saeed`,
+			name: article.author,
+		},
+		publisher: {
+			"@type": "MedicalOrganization",
+			"@id": `${baseUrl}/#organization`,
+			name: "Alziyadi Med Treatment in Russia",
+		},
+		description: article.excerpt,
+		inLanguage: locale,
+		wordCount: article.wordCount,
+		mainEntityOfPage: {
+			"@type": "WebPage",
+			"@id": `${baseUrl}/${locale}/blog/${slug}`,
+		},
+		speakable: {
+			"@type": "SpeakableSpecification",
+			cssSelector: ["h1", ".article-excerpt", ".article-content h2"],
+		},
   };
 
   const readingTime = article.wordCount

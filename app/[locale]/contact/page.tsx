@@ -2,18 +2,18 @@ import type { Metadata } from 'next';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import JsonLd from '@/components/seo/JsonLd';
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://alziyadimed.com';
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "https://Alziyadi Med.com";
 
 const titles: Record<string, string> = {
 	ar: "تواصل معنا | الزيادي ميد للعلاج في روسيا",
-	en: "Contact Us | AlziyadiMed Treatment in Russia",
-	ru: "Контакты | Лечение в России AlziyadiMed",
+	en: "Contact Us | Alziyadi Med Treatment in Russia",
+	ru: "Контакты | Лечение в России Alziyadi Med",
 };
 
 const descriptions: Record<string, string> = {
 	ar: "تواصل مع فريق الزيادي ميد عبر واتساب أو البريد الإلكتروني. نرد بالعربية والإنجليزية والروسية.",
-	en: "Contact AlziyadiMed team via WhatsApp or email. We reply in Arabic, English, and Russian.",
-	ru: "Свяжитесь с командой AlziyadiMed через WhatsApp или email. Отвечаем на арабском, английском и русском.",
+	en: "Contact Alziyadi Med team via WhatsApp or email. We reply in Arabic, English, and Russian.",
+	ru: "Свяжитесь с командой Alziyadi Med через WhatsApp или email. Отвечаем на арабском, английском и русском.",
 };
 
 export async function generateMetadata({
@@ -161,10 +161,10 @@ export default async function ContactPage({
 								{c.emailHeading}
 							</h2>
 							<a
-								href="mailto:info@alziyadimed.com"
+								href="mailto:info@Alziyadi Med.com"
 								className="text-[var(--color-primary)] hover:text-[var(--color-primary-light)] text-sm font-medium transition-colors break-all"
 							>
-								info@alziyadimed.com
+								info@Alziyadi Med.com
 							</a>
 						</div>
 
