@@ -20,10 +20,12 @@
   "about": {
     "title": "About Us",
     "text": "We are an elite team of Arab doctors working in the Russian Ministry of Health under the direct supervision of Dr. Saeed Alziyadi. We offer a comprehensive service that begins with coordinating with the best Russian doctors, through accurate medical translation, accommodation and transport, all the way to post-treatment follow-up.",
-    "card1": "Orthopedic Specialist",
-    "card2": "Company CEO",
+    "card1": "Team of Specialized Arab Doctors",
+    "card2": "Comprehensive Arabic-Language Service",
     "card3": "Top Hospital Partnerships",
-    "card4": "Post-Treatment Follow-Up"
+    "card4": "Post-Treatment Follow-Up",
+    "imageTitle": "AlziyadiMed",
+    "imageSubtitle": "Led by Dr. Saeed Alziyadi, Orthopedic Specialist & Company CEO"
   },
   "services": {
     "title": "Our Services",

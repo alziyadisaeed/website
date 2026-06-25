@@ -52,10 +52,8 @@ export default async function About({ locale }: AboutProps) {
 						<div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent)] flex items-center justify-center shadow-xl">
 							<div className="text-center text-white">
 								<Award size={64} className="mx-auto mb-4 opacity-70" />
-								<p className="font-semibold text-lg">Dr. Saeed Alziyadi</p>
-								<p className="text-white/70 text-sm">
-									Orthopedic Specialist & Company CEO
-								</p>
+								<p className="font-semibold text-lg">{t("imageTitle")}</p>
+								<p className="text-white/70 text-sm">{t("imageSubtitle")}</p>
 							</div>
 						</div>
 						{/* Floating certified badge */}
