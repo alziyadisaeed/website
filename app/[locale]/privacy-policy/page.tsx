@@ -85,10 +85,10 @@ export default async function PrivacyPolicyPage({
 						<p>
 							لأي استفسار حول هذه السياسة، تواصل معنا على:{" "}
 							<a
-								href="mailto:info@Alziyadi Med.com"
+								href="mailto:info@alziyadimed.com"
 								className="text-[var(--color-primary)]"
 							>
-								info@Alziyadi Med.com
+								info@alziyadimed.com
 							</a>
 						</p>
 					</section>
@@ -154,10 +154,10 @@ export default async function PrivacyPolicyPage({
 						<p>
 							По вопросам данной политики пишите нам:{" "}
 							<a
-								href="mailto:info@Alziyadi Med.com"
+								href="mailto:info@alziyadimed.com"
 								className="text-[var(--color-primary)]"
 							>
-								info@Alziyadi Med.com
+								info@alziyadimed.com
 							</a>
 						</p>
 					</section>
@@ -215,10 +215,10 @@ export default async function PrivacyPolicyPage({
 						<p>
 							For any questions regarding this policy, contact us at:{" "}
 							<a
-								href="mailto:info@Alziyadi Med.com"
+								href="mailto:info@alziyadimed.com"
 								className="text-[var(--color-primary)]"
 							>
-								info@Alziyadi Med.com
+								info@alziyadimed.com
 							</a>
 						</p>
 					</section>

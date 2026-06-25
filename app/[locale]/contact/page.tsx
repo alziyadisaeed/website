@@ -161,10 +161,10 @@ export default async function ContactPage({
 								{c.emailHeading}
 							</h2>
 							<a
-								href="mailto:info@Alziyadi Med.com"
+								href="mailto:info@alziyadimed.com"
 								className="text-[var(--color-primary)] hover:text-[var(--color-primary-light)] text-sm font-medium transition-colors break-all"
 							>
-								info@Alziyadi Med.com
+								info@alziyadimed.com
 							</a>
 						</div>
 

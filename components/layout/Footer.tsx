@@ -83,11 +83,11 @@ export default async function Footer({ locale }: FooterProps) {
 						<ul className="space-y-3 text-sm text-gray-400">
 							<li>
 								<a
-									href="mailto:info@Alziyadi Med.com"
+									href="mailto:info@alziyadimed.com"
 									className="flex items-center gap-2 hover:text-[var(--color-accent)] transition-colors"
 								>
 									<Mail size={14} className="text-[var(--color-accent)]" />
-									<span>info@Alziyadi Med.com</span>
+									<span>info@alziyadimed.com</span>
 								</a>
 							</li>
 							<li>
