@@ -7,9 +7,9 @@ import Link from 'next/link';
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://alziyadimed.com';
 
 const titles: Record<string, string> = {
-  ar: 'خدماتنا | ألزيادي ميد',
-  en: 'Our Services | AlziyadiMed',
-  ru: 'Наши услуги | AlziyadiMed',
+	ar: "خدماتنا | الزيادي ميد",
+	en: "Our Services | AlziyadiMed",
+	ru: "Наши услуги | AlziyadiMed",
 };
 
 const descriptions: Record<string, string> = {

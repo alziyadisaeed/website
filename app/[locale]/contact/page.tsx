@@ -5,15 +5,15 @@ import JsonLd from '@/components/seo/JsonLd';
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://alziyadimed.com';
 
 const titles: Record<string, string> = {
-  ar: 'تواصل معنا | ألزيادي ميد للعلاج في روسيا',
-  en: 'Contact Us | AlziyadiMed Treatment in Russia',
-  ru: 'Контакты | Лечение в России AlziyadiMed',
+	ar: "تواصل معنا | الزيادي ميد للعلاج في روسيا",
+	en: "Contact Us | AlziyadiMed Treatment in Russia",
+	ru: "Контакты | Лечение в России AlziyadiMed",
 };
 
 const descriptions: Record<string, string> = {
-  ar: 'تواصل مع فريق ألزيادي ميد عبر واتساب أو البريد الإلكتروني. نرد بالعربية والإنجليزية والروسية.',
-  en: 'Contact AlziyadiMed team via WhatsApp or email. We reply in Arabic, English, and Russian.',
-  ru: 'Свяжитесь с командой AlziyadiMed через WhatsApp или email. Отвечаем на арабском, английском и русском.',
+	ar: "تواصل مع فريق الزيادي ميد عبر واتساب أو البريد الإلكتروني. نرد بالعربية والإنجليزية والروسية.",
+	en: "Contact AlziyadiMed team via WhatsApp or email. We reply in Arabic, English, and Russian.",
+	ru: "Свяжитесь с командой AlziyadiMed через WhatsApp или email. Отвечаем на арабском, английском и русском.",
 };
 
 export async function generateMetadata({

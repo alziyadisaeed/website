@@ -15,9 +15,9 @@ import { getTranslations } from 'next-intl/server';
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://alziyadimed.com';
 
 const titles: Record<string, string> = {
-  ar: 'ألزيادي ميد | العلاج في روسيا',
-  en: 'AlziyadiMed | Treatment in Russia',
-  ru: 'AlziyadiMed | Медицинский туризм в России',
+	ar: "الزيادي ميد | العلاج في روسيا",
+	en: "AlziyadiMed | Treatment in Russia",
+	ru: "AlziyadiMed | Медицинский туризм в России",
 };
 
 const descriptions: Record<string, string> = {

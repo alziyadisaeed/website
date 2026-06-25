@@ -8,9 +8,9 @@ import { unstable_cache } from 'next/cache';
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://alziyadimed.com';
 
 const titles: Record<string, string> = {
-  ar: 'المدونة | ألزيادي ميد للعلاج في روسيا',
-  en: 'Blog | AlziyadiMed Treatment in Russia',
-  ru: 'Блог | Лечение в России AlziyadiMed',
+	ar: "المدونة | الزيادي ميد للعلاج في روسيا",
+	en: "Blog | AlziyadiMed Treatment in Russia",
+	ru: "Блог | Лечение в России AlziyadiMed",
 };
 
 const descriptions: Record<string, string> = {
