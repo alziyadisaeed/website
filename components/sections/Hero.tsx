@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { MessageCircle, ChevronRight, Shield, Users, Building2, Globe } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 
@@ -103,13 +104,16 @@ export default async function Hero({ locale }: HeroProps) {
             </div>
           </div>
 
-          {/* Hero image placeholder with aspect ratio */}
+          {/* Hero image */}
           <div className="hidden lg:block">
-            <div className="aspect-[16/10] rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center">
-              <div className="text-center text-white/60">
-                <Building2 size={64} className="mx-auto mb-4" />
-                <p className="text-sm">Moscow Medical Center</p>
-              </div>
+            <div className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
+              <Image
+                src="/hero.png"
+                alt="Doctor consulting with patients, Moscow skyline in the background"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
           </div>
         </div>

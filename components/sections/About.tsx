@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { Award, Languages, Building2, HeartHandshake } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 
@@ -47,28 +48,35 @@ export default async function About({ locale }: AboutProps) {
 						</div>
 					</div>
 
-					{/* Image placeholder with certified badge */}
-					<div className="relative">
-						<div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent)] flex items-center justify-center shadow-xl">
-							<div className="text-center text-white">
-								<Award size={64} className="mx-auto mb-4 opacity-70" />
-								<p className="font-semibold text-lg">{t("imageTitle")}</p>
-								<p className="text-white/70 text-sm">{t("imageSubtitle")}</p>
+					{/* Dr. Saeed Alziyadi photo with certified badge */}
+					<div>
+						<div className="relative">
+							<div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
+								<Image
+									src="/ceo.jpg"
+									alt="Dr. Saeed Alziyadi"
+									fill
+									className="object-cover"
+								/>
+							</div>
+							{/* Floating certified badge */}
+							<div className="absolute -bottom-4 -start-4 bg-white rounded-xl shadow-lg p-4 border border-[var(--color-border)] flex items-center gap-3">
+								<div className="w-10 h-10 bg-[var(--color-accent)] rounded-full flex items-center justify-center text-white">
+									<Award size={20} />
+								</div>
+								<div>
+									<div className="text-xs font-bold text-[var(--color-text)]">
+										Certified
+									</div>
+									<div className="text-xs text-[var(--color-text-muted)]">
+										Since 2017
+									</div>
+								</div>
 							</div>
 						</div>
-						{/* Floating certified badge */}
-						<div className="absolute -bottom-4 -start-4 bg-white rounded-xl shadow-lg p-4 border border-[var(--color-border)] flex items-center gap-3">
-							<div className="w-10 h-10 bg-[var(--color-accent)] rounded-full flex items-center justify-center text-white">
-								<Award size={20} />
-							</div>
-							<div>
-								<div className="text-xs font-bold text-[var(--color-text)]">
-									Certified
-								</div>
-								<div className="text-xs text-[var(--color-text-muted)]">
-									Since 2017
-								</div>
-							</div>
+						<div className="text-center mt-6">
+							<p className="font-semibold text-lg text-[var(--color-text)]">{t("imageTitle")}</p>
+							<p className="text-[var(--color-text-muted)] text-sm">{t("imageSubtitle")}</p>
 						</div>
 					</div>
 				</div>

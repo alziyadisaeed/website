@@ -38,6 +38,12 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
 	metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL ?? "https://Alziyadi Med.com"),
+	icons: {
+		icon: [
+			{ url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+			{ url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+		],
+	},
 };
 
 export function generateStaticParams() {

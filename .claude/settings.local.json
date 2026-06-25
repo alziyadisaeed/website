@@ -1,20 +1,27 @@
 {
   "permissions": {
     "allow": [
-		"Bash(npx create-next-app@latest . --typescript --tailwind --app --no-src-dir --import-alias \"@/*\" --yes)",
-		"Bash(npm install *)",
-		"Bash(npx shadcn@latest init -y)",
-		"Bash(npx shadcn@latest add button table dialog input textarea select badge card --yes)",
-		"Bash(npm run *)",
-		"Bash(node -e \"const nc = require\\('D:/_____work/dr_saeed/node_modules/next/dist/server/web/exports/cache.js'\\); console.log\\(Object.keys\\(nc\\)\\)\")",
-		"Bash(xargs grep *)",
-		"Bash(node *)",
-		"Bash(npx tsc *)",
-		"Bash(npx eslint *)",
-		"Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/ar)",
-		"Read(//tmp/**)",
-		"Bash(perl -i -pe 's/drsaeedalziyadi\\\\@gmail\\\\.com/info\\\\@Alziyadi Med.com/g' messages/ar.json messages/ru.json)",
-		"Bash(perl -i -pe 's/جميع الحقوق محفوظة لشركة الدكتور سعيد الزيادي للسياحة العلاجية/جميع الحقوق محفوظة لشركة الزيادي ميد للسياحة العلاجية/' messages/ar.json)"
-	]
+      "Bash(npx create-next-app@latest . --typescript --tailwind --app --no-src-dir --import-alias \"@/*\" --yes)",
+      "Bash(npm install *)",
+      "Bash(npx shadcn@latest init -y)",
+      "Bash(npx shadcn@latest add button table dialog input textarea select badge card --yes)",
+      "Bash(npm run *)",
+      "Bash(node -e \"const nc = require\\('D:/_____work/dr_saeed/node_modules/next/dist/server/web/exports/cache.js'\\); console.log\\(Object.keys\\(nc\\)\\)\")",
+      "Bash(xargs grep *)",
+      "Bash(node *)",
+      "Bash(npx tsc *)",
+      "Bash(npx eslint *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/ar)",
+      "Read(//tmp/**)",
+      "Bash(perl -i -pe 's/drsaeedalziyadi\\\\@gmail\\\\.com/info\\\\@Alziyadi Med.com/g' messages/ar.json messages/ru.json)",
+      "Bash(perl -i -pe 's/جميع الحقوق محفوظة لشركة الدكتور سعيد الزيادي للسياحة العلاجية/جميع الحقوق محفوظة لشركة الزيادي ميد للسياحة العلاجية/' messages/ar.json)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/favicon.ico)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/manifest.webmanifest)",
+      "Bash(curl -s http://localhost:3000/ar)",
+      "Bash(grep -rA3 '\"about\"' messages/en.json)",
+      "PowerShell(Add-Type -AssemblyName System.Drawing; $img = [System.Drawing.Image]::FromFile\\(\"D:\\\\___dr_saeed\\\\src\\\\client\\\\public\\\\ceo.png\"\\); \"$\\($img.Width\\)x$\\($img.Height\\)\"; $img.Dispose\\(\\))",
+      "Bash(awk 'NR==75{print; print \"\\\\t\\\\t\\\\t\\\\t\\\\t<div className=\\\\\"text-center mt-6\\\\\">\"; print \"\\\\t\\\\t\\\\t\\\\t\\\\t\\\\t<p className=\\\\\"font-semibold text-lg text-[var\\(--color-text\\)]\\\\\">{t\\(\\\\\"imageTitle\\\\\"\\)}</p>\"; print \"\\\\t\\\\t\\\\t\\\\t\\\\t\\\\t<p className=\\\\\"text-[var\\(--color-text-muted\\)] text-sm\\\\\">{t\\(\\\\\"imageSubtitle\\\\\"\\)}</p>\"; print \"\\\\t\\\\t\\\\t\\\\t\\\\t</div>\"; next}1' components/sections/About.tsx)",
+      "Bash(mv /tmp/about.tsx components/sections/About.tsx)"
+    ]
   }
 }

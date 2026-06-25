@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Stethoscope } from 'lucide-react';
+import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import NavbarMobile from './NavbarMobile';
 
@@ -31,9 +31,7 @@ export default async function Navbar({ locale }: NavbarProps) {
 				<div className="flex items-center justify-between h-16">
 					{/* Logo */}
 					<Link href={`/${locale}`} className="flex items-center gap-2 shrink-0">
-						<div className="p-1.5 bg-[var(--color-primary)] rounded-lg text-white">
-							<Stethoscope size={20} />
-						</div>
+						<Image src="/logo.png" alt="Alziyadi Med" width={36} height={36} className="shrink-0" />
 						<div className="leading-tight">
 							<div className="font-bold text-[var(--color-text)] text-sm sm:text-base">
 								Alziyadi Med

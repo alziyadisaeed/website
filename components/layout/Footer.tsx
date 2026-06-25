@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { Stethoscope, Phone, Mail, MapPin } from 'lucide-react';
+import Image from 'next/image';
+import { Phone, Mail, MapPin } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 
 interface FooterProps {
@@ -18,9 +19,7 @@ export default async function Footer({ locale }: FooterProps) {
 					{/* Logo + tagline */}
 					<div className="lg:col-span-1">
 						<Link href={`/${locale}`} className="flex items-center gap-2 mb-3">
-							<div className="p-1.5 bg-[var(--color-accent)] rounded-lg text-white">
-								<Stethoscope size={20} />
-							</div>
+							<Image src="/logo.png" alt="Alziyadi Med" width={32} height={32} className="shrink-0" />
 							<span className="font-bold text-white">Alziyadi Med</span>
 						</Link>
 						<p className="text-sm text-gray-400 mb-4">{t("tagline")}</p>
