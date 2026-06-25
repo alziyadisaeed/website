@@ -39,7 +39,7 @@ export default async function Navbar({ locale }: NavbarProps) {
                 AlziyadiMed
               </div>
               <div className="text-xs text-[var(--color-text-muted)] hidden sm:block">
-                Medical Tourism Russia
+                Treatment in Russia
               </div>
             </div>
           </Link>

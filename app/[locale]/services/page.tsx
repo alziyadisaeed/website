@@ -13,9 +13,9 @@ const titles: Record<string, string> = {
 };
 
 const descriptions: Record<string, string> = {
-  ar: 'خدمات متكاملة للسياحة الطبية إلى روسيا: قبل السفر وأثناء الرحلة وبعد العلاج.',
-  en: 'Comprehensive medical tourism services to Russia: before travel, during the journey, and after treatment.',
-  ru: 'Комплексные услуги медицинского туризма в России: до поездки, во время и после лечения.',
+  ar: 'خدمات متكاملة للعلاج في روسيا: قبل السفر وأثناء الرحلة وبعد العلاج.',
+  en: 'Comprehensive treatment in Russia services: before travel, during the journey, and after treatment.',
+  ru: 'Комплексные услуги лечения в России: до поездки, во время и после лечения.',
 };
 
 export async function generateMetadata({

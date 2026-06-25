@@ -3,9 +3,9 @@ import type { Metadata } from 'next';
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://alziyadimed.com';
 
 const titles: Record<string, string> = {
-  ar: 'سياسة الخصوصية | ألزيادي ميد للسياحة العلاجية',
-  en: 'Privacy Policy | AlziyadiMed Medical Tourism',
-  ru: 'Политика конфиденциальности | Медицинский туризм AlziyadiMed',
+  ar: 'سياسة الخصوصية | ألزيادي ميد للعلاج في روسيا',
+  en: 'Privacy Policy | AlziyadiMed Treatment in Russia',
+  ru: 'Политика конфиденциальности | Лечение в России AlziyadiMed',
 };
 
 export async function generateMetadata({

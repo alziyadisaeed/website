@@ -15,15 +15,15 @@ import { getTranslations } from 'next-intl/server';
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://alziyadimed.com';
 
 const titles: Record<string, string> = {
-  ar: 'ألزيادي ميد | السياحة الطبية في روسيا',
-  en: 'AlziyadiMed | Medical Tourism Russia',
+  ar: 'ألزيادي ميد | العلاج في روسيا',
+  en: 'AlziyadiMed | Treatment in Russia',
   ru: 'AlziyadiMed | Медицинский туризм в России',
 };
 
 const descriptions: Record<string, string> = {
-  ar: 'خدمات السياحة العلاجية المتكاملة إلى روسيا للمرضى العرب. تنسيق طبي، ترجمة، إقامة، وما بعد العلاج.',
-  en: 'Comprehensive medical tourism services to Russia for Arab patients. Medical coordination, translation, accommodation, and post-treatment support.',
-  ru: 'Комплексные услуги медицинского туризма в Россию для арабских пациентов. Медицинская координация, перевод, проживание и послелечебное сопровождение.',
+  ar: 'خدمات العلاج في روسيا المتكاملة للمرضى العرب. تنسيق طبي، ترجمة، إقامة، وما بعد العلاج.',
+  en: 'Comprehensive treatment in Russia services for Arab patients. Medical coordination, translation, accommodation, and post-treatment support.',
+  ru: 'Комплексные услуги лечения в России для арабских пациентов. Медицинская координация, перевод, проживание и послелечебное сопровождение.',
 };
 
 export async function generateMetadata({
@@ -48,7 +48,7 @@ export async function generateMetadata({
       title: titles[locale] ?? titles.ar,
       description: descriptions[locale] ?? descriptions.ar,
       url: `${baseUrl}/${locale}`,
-      siteName: 'AlziyadiMed Medical Tourism',
+      siteName: 'AlziyadiMed Treatment in Russia',
       locale: locale,
       type: 'website',
     },
@@ -89,11 +89,11 @@ export default async function HomePage({
     description: descriptions[locale],
     provider: {
       '@type': 'MedicalOrganization',
-      name: 'AlziyadiMed Medical Tourism',
+      name: 'AlziyadiMed Treatment in Russia',
       url: baseUrl,
     },
     areaServed: ['RU', 'SA', 'AE', 'KW', 'QA', 'BH', 'OM'],
-    serviceType: 'Medical Tourism',
+    serviceType: 'Treatment in Russia',
   };
 
   return (

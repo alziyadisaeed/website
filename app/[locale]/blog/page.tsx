@@ -8,15 +8,15 @@ import { unstable_cache } from 'next/cache';
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://alziyadimed.com';
 
 const titles: Record<string, string> = {
-  ar: 'المدونة | ألزيادي ميد للسياحة العلاجية',
-  en: 'Blog | AlziyadiMed Medical Tourism',
-  ru: 'Блог | Медицинский туризм AlziyadiMed',
+  ar: 'المدونة | ألزيادي ميد للعلاج في روسيا',
+  en: 'Blog | AlziyadiMed Treatment in Russia',
+  ru: 'Блог | Лечение в России AlziyadiMed',
 };
 
 const descriptions: Record<string, string> = {
-  ar: 'مقالات وأدلة شاملة حول السياحة الطبية في روسيا للمرضى العرب.',
-  en: 'Articles and guides on medical tourism in Russia for Arab patients.',
-  ru: 'Статьи и руководства по медицинскому туризму в России для арабских пациентов.',
+  ar: 'مقالات وأدلة شاملة حول العلاج في روسيا للمرضى العرب.',
+  en: 'Articles and guides on treatment in Russia for Arab patients.',
+  ru: 'Статьи и руководства по лечению в России для арабских пациентов.',
 };
 
 export async function generateMetadata({
@@ -91,9 +91,9 @@ const comingSoonLabels: Record<string, string> = {
 };
 
 const comingSoonSubLabels: Record<string, string> = {
-  ar: 'نحن نعمل على إعداد مقالات مفيدة حول السياحة العلاجية في روسيا.',
-  en: 'We are preparing helpful articles about medical tourism in Russia.',
-  ru: 'Мы готовим полезные статьи о медицинском туризме в России.',
+  ar: 'نحن نعمل على إعداد مقالات مفيدة حول العلاج في روسيا.',
+  en: 'We are preparing helpful articles about treatment in Russia.',
+  ru: 'Мы готовим полезные статьи о лечении в России.',
 };
 
 export default async function BlogPage({

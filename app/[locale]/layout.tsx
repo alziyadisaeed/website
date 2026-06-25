@@ -73,7 +73,7 @@ const personJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Dr. Saeed Alziyadi',
-  jobTitle: 'Medical Tourism Specialist',
+  jobTitle: 'Treatment in Russia Specialist',
   worksFor: {
     '@type': 'MedicalOrganization',
     name: 'AlziyadiMed',

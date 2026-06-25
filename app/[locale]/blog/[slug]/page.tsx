@@ -133,7 +133,7 @@ export default async function ArticlePage({
     publisher: {
       '@type': 'MedicalOrganization',
       '@id': `${baseUrl}/#organization`,
-      name: 'AlziyadiMed Medical Tourism',
+      name: 'AlziyadiMed Treatment in Russia',
     },
     description: article.excerpt,
     inLanguage: locale,

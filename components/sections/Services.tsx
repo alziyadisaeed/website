@@ -68,7 +68,7 @@ export default async function Services({ locale }: ServicesProps) {
                     name: card.title,
                     provider: {
                       '@type': 'Organization',
-                      name: 'AlziyadiMed Medical Tourism',
+                      name: 'AlziyadiMed Treatment in Russia',
                       url: baseUrl,
                     },
                     areaServed: ['RU', 'SA', 'AE', 'KW', 'QA', 'BH', 'OM'],

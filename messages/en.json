@@ -8,11 +8,11 @@
     "contact": "Contact"
   },
   "hero": {
-    "headline": "Your Medical Journey to Russia Starts Here",
+    "headline": "Your Treatment Journey to Russia Starts Here",
     "subheadline": "With AlziyadiMed, experience world-class medical care at Moscow's finest hospitals — affordable, comprehensive, and fully supported in Arabic",
     "ctaPrimary": "Contact Us on WhatsApp",
     "ctaSecondary": "Explore Our Services",
-    "badge1": "10+ Years Experience",
+    "badge1": "8+ Years Experience",
     "badge2": "500+ Patients Served",
     "badge3": "Top Moscow Hospitals",
     "badge4": "Full Arabic Support"
@@ -102,15 +102,15 @@
     ]
   },
   "tourism": {
-    "title": "Medical Tourism Services",
-    "card1Title": "Accommodation",
-    "card1Desc": "Comfortable hotels and furnished apartments close to hospitals at affordable prices",
-    "card2Title": "Halal Dining",
-    "card2Desc": "Trusted halal restaurants and Arabic food delivery service to your residence",
-    "card3Title": "Transportation",
-    "card3Desc": "Private transfer service to and from the airport, hospitals, and all your appointments",
-    "card4Title": "Leisure",
-    "card4Desc": "Guided tours of Moscow for patient companions during the treatment period"
+		"title": "Treatment in Russia Services",
+		"card1Title": "Accommodation",
+		"card1Desc": "Comfortable hotels and furnished apartments close to hospitals at affordable prices",
+		"card2Title": "Halal Dining",
+		"card2Desc": "Trusted halal restaurants and Arabic food delivery service to your residence",
+		"card3Title": "Transportation",
+		"card3Desc": "Private transfer service to and from the airport, hospitals, and all your appointments",
+		"card4Title": "Leisure",
+		"card4Desc": "Guided tours of Moscow for patient companions during the treatment period"
   },
   "requestForm": {
     "title": "Request Your Free Medical Consultation",
@@ -175,14 +175,14 @@
 		"whatsapp3": "+7 925 258 0005"
   },
   "footer": {
-    "tagline": "Your medical journey to Russia in trusted hands",
-    "copyright": "All rights reserved — AlziyadiMed Medical Tourism",
-    "certified": "Certified by the Russian Ministry of Health | Trusted Medical Partner since 2013",
-    "links": {
-      "privacy": "Privacy Policy",
-      "faq": "FAQ",
-      "blog": "Blog"
-    }
+		"tagline": "Your medical journey to Russia in trusted hands",
+		"copyright": "All rights reserved — AlziyadiMed Treatment in Russia",
+		"certified": "Certified by the Russian Ministry of Health | Trusted Medical Partner since 2017",
+		"links": {
+			"privacy": "Privacy Policy",
+			"faq": "FAQ",
+			"blog": "Blog"
+		}
   },
   "faq": [
     {

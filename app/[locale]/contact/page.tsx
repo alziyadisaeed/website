@@ -5,9 +5,9 @@ import JsonLd from '@/components/seo/JsonLd';
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://alziyadimed.com';
 
 const titles: Record<string, string> = {
-  ar: 'تواصل معنا | ألزيادي ميد للسياحة العلاجية',
-  en: 'Contact Us | AlziyadiMed Medical Tourism',
-  ru: 'Контакты | Медицинский туризм AlziyadiMed',
+  ar: 'تواصل معنا | ألزيادي ميد للعلاج في روسيا',
+  en: 'Contact Us | AlziyadiMed Treatment in Russia',
+  ru: 'Контакты | Лечение в России AlziyadiMed',
 };
 
 const descriptions: Record<string, string> = {

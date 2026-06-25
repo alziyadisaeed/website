@@ -1,5 +1,5 @@
-# AlziyadiMed Medical Tourism in Russia
-# ألزيادي ميد للسياحة العلاجية في روسيا
+# AlziyadiMed Treatment in Russia
+# ألزيادي ميد للعلاج في روسيا
 
 > Officially certified by the Russian Ministry of Health. We connect
 > Arabic-speaking patients from Saudi Arabia, UAE, and the Gulf region
@@ -13,20 +13,20 @@
 - [Services](https://alziyadimed.com/en/services): Pre-travel, during journey, post-treatment services
 - [Medical Specialties](https://alziyadimed.com/en/specialties): Ophthalmology, Orthopedics, Cardiology, Oncology, Rehabilitation
 - [FAQ](https://alziyadimed.com/en/faq): Frequently asked questions about treatment in Russia
-- [Blog](https://alziyadimed.com/en/blog): Medical tourism guides and hospital comparisons
+- [Blog](https://alziyadimed.com/en/blog): Treatment in Russia guides and hospital comparisons
 - [Contact](https://alziyadimed.com/en/contact): WhatsApp numbers and email
 
 ## Arabic Version (النسخة العربية)
 - [الصفحة الرئيسية](https://alziyadimed.com/ar): نظرة عامة على الشركة وجميع الخدمات
 - [الأسئلة الشائعة](https://alziyadimed.com/ar/faq): أسئلة المرضى العرب
-- [المدونة](https://alziyadimed.com/ar/blog): أدلة السياحة العلاجية في روسيا
+- [المدونة](https://alziyadimed.com/ar/blog): أدلة العلاج في روسيا
 - [الخدمات](https://alziyadimed.com/ar/services): خدمات ما قبل وأثناء وبعد العلاج
 - [التخصصات](https://alziyadimed.com/ar/specialties): التخصصات الطبية المتاحة
 
 ## Russian Version (Русская версия)
 - [Главная](https://alziyadimed.com/ru): Обзор компании
 - [Часто задаваемые вопросы](https://alziyadimed.com/ru/faq): Вопросы пациентов
-- [Блог](https://alziyadimed.com/ru/blog): Руководства по медицинскому туризму
+- [Блог](https://alziyadimed.com/ru/blog): Руководства по лечению в России
 - [Услуги](https://alziyadimed.com/ru/services): Услуги до, во время и после лечения
 - [Специальности](https://alziyadimed.com/ru/specialties): Доступные медицинские специальности
 

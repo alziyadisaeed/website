@@ -62,7 +62,7 @@ export default async function Hero({ locale }: HeroProps) {
               style={{ animationDelay: delays[0] }}
             >
               <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-6 border border-white/30">
-                🏥 Medical Tourism Russia
+                🏥 Treatment in Russia
               </span>
             </div>
 

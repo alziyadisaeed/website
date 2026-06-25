@@ -12,9 +12,9 @@ const titles: Record<string, string> = {
 };
 
 const descriptions: Record<string, string> = {
-	ar: "إجابات على أكثر الأسئلة شيوعاً حول السياحة الطبية في روسيا مع فريق ألزيادي ميد.",
-	en: "Answers to the most common questions about medical tourism in Russia with AlziyadiMed.",
-	ru: "Ответы на наиболее часто задаваемые вопросы о медицинском туризме в России с AlziyadiMed.",
+	ar: "إجابات على أكثر الأسئلة شيوعاً حول العلاج في روسيا مع فريق ألزيادي ميد.",
+	en: "Answers to the most common questions about treatment in Russia with AlziyadiMed.",
+	ru: "Ответы на наиболее часто задаваемые вопросы о лечении в России с AlziyadiMed.",
 };
 
 type FaqItem = { q: string; a: string };
