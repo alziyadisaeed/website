@@ -1,11 +1,13 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Calendar, ArrowRight } from 'lucide-react';
 import { connectDB } from '@/lib/mongodb';
 import Article from '@/lib/models/Article';
 import { unstable_cache } from 'next/cache';
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "https://Alziyadi Med.com";
+const apiUrl = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:5000';
 
 const titles: Record<string, string> = {
 	ar: "المدونة | الزيادي ميد للعلاج في روسيا",
@@ -49,24 +51,33 @@ interface ArticleDoc {
   title: string;
   slug: string;
   excerpt: string;
-  locale: string;
   publishedAt: Date | string;
   author: string;
+  coverImage?: string;
+  isFallback: boolean;
 }
 
+type Locale = 'ar' | 'en' | 'ru';
+
 const getArticles = unstable_cache(
-  async (locale: string): Promise<ArticleDoc[]> => {
+  async (locale: Locale): Promise<ArticleDoc[]> => {
     await connectDB();
-    const docs = await Article.find({ locale: locale as 'ar' | 'en' | 'ru' }).sort({ publishedAt: -1 }).lean();
-    return docs.map((d) => ({
-      _id: String(d._id),
-      title: d.title,
-      slug: d.slug,
-      excerpt: d.excerpt,
-      locale: d.locale,
-      publishedAt: d.publishedAt ?? d.createdAt ?? new Date(),
-      author: d.author,
-    }));
+    const docs = await Article.find({}).sort({ publishedAt: -1 }).lean();
+    return docs
+      .filter((d) => d.translations?.ar) // Arabic is always required, so this excludes nothing valid
+      .map((d) => {
+        const translation = d.translations[locale] ?? d.translations.ar;
+        return {
+          _id: String(d._id),
+          title: translation.title,
+          slug: d.slug,
+          excerpt: translation.excerpt,
+          publishedAt: d.publishedAt ?? d.createdAt ?? new Date(),
+          author: d.author,
+          coverImage: d.coverImage?.url ? `${apiUrl}${d.coverImage.url}` : undefined,
+          isFallback: !d.translations[locale],
+        };
+      });
   },
   ['articles-list'],
   { tags: ['articles'], revalidate: 86400 }
@@ -96,16 +107,23 @@ const comingSoonSubLabels: Record<string, string> = {
   ru: 'Мы готовим полезные статьи о лечении в России.',
 };
 
+const fallbackNoticeLabels: Record<string, string> = {
+  ar: 'متوفر بالعربية فقط',
+  en: 'Available in Arabic only',
+  ru: 'Доступно только на арабском',
+};
+
 export default async function BlogPage({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  const safeLocale: Locale = locale === 'en' || locale === 'ru' ? locale : 'ar';
 
   let articles: ArticleDoc[] = [];
   try {
-    articles = await getArticles(locale);
+    articles = await getArticles(safeLocale);
   } catch {
     articles = [];
   }
@@ -145,6 +163,11 @@ export default async function BlogPage({
                 href={`/${locale}/blog/${article.slug}`}
                 className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-[var(--color-border)] hover:shadow-md transition-shadow"
               >
+                {article.coverImage && (
+                  <div className="relative w-full h-40">
+                    <Image src={article.coverImage} alt={article.title} fill className="object-cover" unoptimized />
+                  </div>
+                )}
                 <div className="p-6">
                   <div className="flex items-center gap-2 text-xs text-[var(--color-text-muted)] mb-3">
                     <Calendar size={12} />
@@ -154,6 +177,11 @@ export default async function BlogPage({
                         { year: 'numeric', month: 'long', day: 'numeric' }
                       )}
                     </time>
+                    {article.isFallback && (
+                      <span className="ml-auto text-[10px] font-medium px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
+                        {fallbackNoticeLabels[locale] ?? fallbackNoticeLabels.en}
+                      </span>
+                    )}
                   </div>
                   <h2 className="font-bold text-[var(--color-text)] text-lg mb-3 group-hover:text-[var(--color-primary)] transition-colors leading-snug">
                     {article.title}

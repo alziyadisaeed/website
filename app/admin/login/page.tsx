@@ -1,9 +1,10 @@
 'use client';
 
-import { signIn } from 'next-auth/react';
 import { useState, FormEvent } from 'react';
 import { useRouter } from 'next/navigation';
 import { Eye, EyeOff, LogIn } from 'lucide-react';
+
+const API_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:5000';
 
 export default function AdminLoginPage() {
   const router = useRouter();
@@ -18,17 +19,23 @@ export default function AdminLoginPage() {
     setLoading(true);
     setError('');
 
-    const result = await signIn('credentials', {
-      email,
-      password,
-      redirect: false,
-    });
+    try {
+      const res = await fetch(`${API_URL}/api/auth/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ email, password }),
+      });
 
-    if (result?.error) {
-      setError('Invalid email or password');
+      if (!res.ok) {
+        setError('Invalid email or password');
+        setLoading(false);
+      } else {
+        router.push('/admin');
+      }
+    } catch {
+      setError('Something went wrong. Please try again.');
       setLoading(false);
-    } else {
-      router.push('/admin');
     }
   }
 

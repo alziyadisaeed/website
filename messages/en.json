@@ -136,6 +136,7 @@
     "successTitle": "Your Request Has Been Submitted",
     "successText": "Thank you for reaching out. Our team will review your request and contact you as soon as possible",
     "errorText": "Something went wrong while submitting your request. Please try again.",
+    "phoneInvalid": "Please enter a valid phone number.",
     "countries": {
       "sa": "Saudi Arabia",
       "ae": "United Arab Emirates",

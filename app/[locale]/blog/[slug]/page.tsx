@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { unstable_cache } from 'next/cache';
 import { Calendar, User, Clock } from 'lucide-react';
+import Image from 'next/image';
 import { connectDB } from '@/lib/mongodb';
 import Article from '@/lib/models/Article';
 import { sanitizeHtml } from '@/lib/sanitize';
@@ -10,6 +11,9 @@ import RequestForm from '@/components/sections/RequestForm';
 import Link from 'next/link';
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "https://Alziyadi Med.com";
+const apiUrl = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:5000';
+
+type Locale = 'ar' | 'en' | 'ru';
 
 interface ArticleDoc {
   _id: string;
@@ -17,29 +21,34 @@ interface ArticleDoc {
   slug: string;
   excerpt: string;
   content: string;
-  locale: string;
   publishedAt: Date | string;
   updatedAt: Date | string;
   author: string;
   wordCount?: number;
+  coverImage?: string;
+  isFallback: boolean;
 }
 
 const getArticle = unstable_cache(
-  async (slug: string, locale: string): Promise<ArticleDoc | null> => {
+  async (slug: string, locale: Locale): Promise<ArticleDoc | null> => {
     await connectDB();
-    const doc = await Article.findOne({ slug, locale: locale as 'ar' | 'en' | 'ru' }).lean();
-    if (!doc) return null;
+    const doc = await Article.findOne({ slug }).lean();
+    if (!doc || !doc.translations?.ar) return null;
+
+    const translation = doc.translations[locale] ?? doc.translations.ar;
+
     return {
       _id: String(doc._id),
-      title: doc.title,
+      title: translation.title,
       slug: doc.slug,
-      excerpt: doc.excerpt,
-      content: doc.content,
-      locale: doc.locale,
+      excerpt: translation.excerpt,
+      content: translation.content,
       publishedAt: doc.publishedAt ?? doc.createdAt ?? new Date(),
       updatedAt: doc.updatedAt ?? new Date(),
       author: doc.author,
-      wordCount: doc.wordCount,
+      wordCount: translation.wordCount,
+      coverImage: doc.coverImage?.url ? `${apiUrl}${doc.coverImage.url}` : undefined,
+      isFallback: !doc.translations[locale],
     };
   },
   ['article-detail'],
@@ -52,9 +61,10 @@ export async function generateMetadata({
   params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
   const { locale, slug } = await params;
+  const safeLocale: Locale = locale === 'en' || locale === 'ru' ? locale : 'ar';
   let article: ArticleDoc | null = null;
   try {
-    article = await getArticle(slug, locale);
+    article = await getArticle(slug, safeLocale);
   } catch {
     article = null;
   }
@@ -73,6 +83,7 @@ export async function generateMetadata({
 			publishedTime: String(article.publishedAt),
 			modifiedTime: String(article.updatedAt),
 			authors: [article.author],
+			images: article.coverImage ? [article.coverImage] : undefined,
 		},
   };
 }
@@ -101,16 +112,23 @@ const updatedLabels: Record<string, string> = {
   ru: 'Последнее обновление',
 };
 
+const fallbackBannerLabels: Record<string, string> = {
+  ar: '',
+  en: 'This article is not yet available in English — showing the Arabic version below.',
+  ru: 'Эта статья пока недоступна на русском — ниже показана арабская версия.',
+};
+
 export default async function ArticlePage({
   params,
 }: {
   params: Promise<{ locale: string; slug: string }>;
 }) {
   const { locale, slug } = await params;
+  const safeLocale: Locale = locale === 'en' || locale === 'ru' ? locale : 'ar';
 
   let article: ArticleDoc | null = null;
   try {
-    article = await getArticle(slug, locale);
+    article = await getArticle(slug, safeLocale);
   } catch {
     notFound();
   }
@@ -136,7 +154,8 @@ export default async function ArticlePage({
 			name: "Alziyadi Med Treatment in Russia",
 		},
 		description: article.excerpt,
-		inLanguage: locale,
+		image: article.coverImage,
+		inLanguage: article.isFallback ? 'ar' : locale,
 		wordCount: article.wordCount,
 		mainEntityOfPage: {
 			"@type": "WebPage",
@@ -204,6 +223,18 @@ export default async function ArticlePage({
 
         {/* Article body */}
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          {article.isFallback && fallbackBannerLabels[locale] && (
+            <div className="mb-8 rounded-xl border border-amber-200 bg-amber-50 text-amber-800 text-sm px-4 py-3">
+              {fallbackBannerLabels[locale]}
+            </div>
+          )}
+
+          {article.coverImage && (
+            <div className="relative w-full h-64 sm:h-80 rounded-2xl overflow-hidden mb-10">
+              <Image src={article.coverImage} alt={article.title} fill className="object-cover" unoptimized priority />
+            </div>
+          )}
+
           <div
             className="article-content prose prose-lg max-w-none prose-headings:text-[var(--color-text)] prose-a:text-[var(--color-primary)] prose-strong:text-[var(--color-text)]"
             dangerouslySetInnerHTML={{ __html: safeHtml }}

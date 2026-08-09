@@ -6,11 +6,13 @@ import ArticleForm from '@/components/admin/ArticleForm';
 
 interface ArticleData {
   _id: string;
-  title: string;
   slug: string;
-  excerpt: string;
-  content: string;
-  locale: string;
+  translations: {
+    ar?: { title: string; excerpt: string; content: string };
+    en?: { title: string; excerpt: string; content: string };
+    ru?: { title: string; excerpt: string; content: string };
+  };
+  coverImage?: { url?: string };
 }
 
 async function getArticle(id: string): Promise<ArticleData | null> {
@@ -19,11 +21,13 @@ async function getArticle(id: string): Promise<ArticleData | null> {
   if (!doc) return null;
   return {
     _id: String(doc._id),
-    title: doc.title,
     slug: doc.slug,
-    excerpt: doc.excerpt,
-    content: doc.content,
-    locale: doc.locale,
+    translations: {
+      ar: doc.translations?.ar,
+      en: doc.translations?.en,
+      ru: doc.translations?.ru,
+    },
+    coverImage: doc.coverImage,
   };
 }
 
@@ -42,9 +46,16 @@ export default async function EditArticlePage({
     <div className="p-8">
       <div className="mb-8">
         <h1 className="text-2xl font-bold text-gray-900">Edit Article</h1>
-        <p className="text-gray-500 text-sm mt-1 truncate max-w-md">{article.title}</p>
+        <p className="text-gray-500 text-sm mt-1 truncate max-w-md">{article.translations.ar?.title}</p>
       </div>
-      <ArticleForm action={boundUpdate} defaultValues={article} />
+      <ArticleForm
+        action={boundUpdate}
+        defaultValues={{
+          slug: article.slug,
+          translations: article.translations,
+          coverImage: article.coverImage,
+        }}
+      />
     </div>
   );
 }

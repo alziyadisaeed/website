@@ -30,21 +30,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   try {
     await connectDB();
     const articles = await Article.find({})
-      .select('slug locale updatedAt')
-      .lean() as Array<{ slug: string; locale: string; updatedAt: Date }>;
+      .select('slug updatedAt')
+      .lean() as Array<{ slug: string; updatedAt: Date }>;
 
-    const slugMap: Record<string, Record<string, Date>> = {};
-    for (const a of articles) {
-      if (!slugMap[a.slug]) slugMap[a.slug] = {};
-      slugMap[a.slug][a.locale] = a.updatedAt;
-    }
-
-    articleUrls = articles.map((a) => ({
-      url: `${baseUrl}/${a.locale}/blog/${a.slug}`,
-      lastModified: a.updatedAt,
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    }));
+    // Every locale URL resolves for every article (missing translations fall
+    // back to Arabic on the page itself), so all three are listed.
+    articleUrls = articles.flatMap((a) =>
+      locales.map((locale) => ({
+        url: `${baseUrl}/${locale}/blog/${a.slug}`,
+        lastModified: a.updatedAt,
+        changeFrequency: 'monthly' as const,
+        priority: 0.7,
+      }))
+    );
   } catch {
     articleUrls = [];
   }

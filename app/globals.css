@@ -66,3 +66,86 @@ body {
 
 .animate-fade-up { animation: fadeUp 0.6s ease forwards; }
 .animate-pulse-ring { animation: pulse-ring 1.5s ease-out infinite; }
+
+/* react-phone-number-input overrides */
+.PhoneInput {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  direction: ltr;
+}
+
+.PhoneInputCountry {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  background: var(--color-off-white);
+  border: 1px solid var(--color-border);
+  border-right: none;
+  border-radius: 0.75rem 0 0 0.75rem;
+  height: 42px;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.PhoneInputCountrySelect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  border: none;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.PhoneInputCountrySelectArrow {
+  color: var(--color-text-muted);
+  font-size: 10px;
+  margin-left: 2px;
+}
+
+.PhoneInputCountryIcon {
+  width: 24px;
+  height: 16px;
+}
+
+.PhoneInputCountryIcon--square {
+  width: 16px;
+}
+
+.PhoneInputCountryIconImg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.PhoneInputInput {
+  flex: 1;
+  min-width: 0;
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: 0 0.75rem 0.75rem 0;
+  padding: 0.625rem 1rem;
+  font-size: 0.875rem;
+  color: var(--color-text);
+  outline: none;
+  height: 42px;
+}
+
+.PhoneInputInput::placeholder {
+  color: var(--color-text-muted);
+}
+
+.PhoneInputInput:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 20%, transparent);
+}
+
+.PhoneInputInput:focus + .PhoneInputCountry,
+.PhoneInput:focus-within .PhoneInputCountry {
+  border-color: var(--color-primary);
+}

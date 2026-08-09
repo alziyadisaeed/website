@@ -1,15 +1,15 @@
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/lib/auth';
+import { getSession } from '@/lib/auth';
 import { redirect } from 'next/navigation';
 import Link from 'next/link';
-import { LayoutDashboard, PlusCircle, LogOut } from 'lucide-react';
+import { LayoutDashboard, PlusCircle, ClipboardList } from 'lucide-react';
+import SignOutButton from '@/components/admin/SignOutButton';
 
 export default async function AdminLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const session = await getServerSession(authOptions);
+  const session = await getSession();
 
   if (!session) {
     redirect('/admin/login');
@@ -21,7 +21,7 @@ export default async function AdminLayout({
       <aside className="w-60 bg-[#0F1F3D] text-white flex flex-col">
         <div className="p-6 border-b border-white/10">
           <h1 className="font-bold text-lg leading-tight">Dr. Saeed Admin</h1>
-          <p className="text-white/50 text-xs mt-1">{session.user?.email}</p>
+          <p className="text-white/50 text-xs mt-1">{session.user.email}</p>
         </div>
         <nav className="flex-1 p-4 space-y-1">
           <Link
@@ -38,15 +38,16 @@ export default async function AdminLayout({
             <PlusCircle size={16} />
             New Article
           </Link>
+          <Link
+            href="/admin/leads"
+            className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white transition-colors text-sm"
+          >
+            <ClipboardList size={16} />
+            Applications
+          </Link>
         </nav>
         <div className="p-4 border-t border-white/10">
-          <a
-            href="/api/auth/signout"
-            className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10 text-white/60 hover:text-white transition-colors text-sm"
-          >
-            <LogOut size={16} />
-            Sign Out
-          </a>
+          <SignOutButton />
         </div>
       </aside>
 

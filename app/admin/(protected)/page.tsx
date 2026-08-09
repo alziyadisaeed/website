@@ -7,9 +7,9 @@ import DeleteArticleButton from '@/components/admin/DeleteArticleButton';
 interface ArticleRow {
   _id: string;
   title: string;
-  locale: string;
   slug: string;
   publishedAt: Date | string;
+  locales: ('ar' | 'en' | 'ru')[];
 }
 
 async function getArticles(): Promise<ArticleRow[]> {
@@ -17,10 +17,10 @@ async function getArticles(): Promise<ArticleRow[]> {
   const docs = await Article.find({}).sort({ publishedAt: -1 }).lean();
   return docs.map((d) => ({
     _id: String(d._id),
-    title: d.title,
-    locale: d.locale,
+    title: d.translations?.ar?.title ?? '(untitled)',
     slug: d.slug,
     publishedAt: d.publishedAt ?? d.createdAt ?? new Date(),
+    locales: (['ar', 'en', 'ru'] as const).filter((l) => !!d.translations?.[l]),
   }));
 }
 
@@ -84,9 +84,20 @@ export default async function AdminDashboard() {
                     <div className="text-gray-400 text-xs mt-0.5">{article.slug}</div>
                   </td>
                   <td className="px-6 py-4">
-                    <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium ${localeBadgeColors[article.locale] ?? 'bg-gray-100 text-gray-700'}`}>
-                      {article.locale.toUpperCase()}
-                    </span>
+                    <div className="flex gap-1.5">
+                      {(['ar', 'en', 'ru'] as const).map((l) => (
+                        <span
+                          key={l}
+                          className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium ${
+                            article.locales.includes(l)
+                              ? localeBadgeColors[l]
+                              : 'bg-gray-50 text-gray-300'
+                          }`}
+                        >
+                          {l.toUpperCase()}
+                        </span>
+                      ))}
+                    </div>
                   </td>
                   <td className="px-6 py-4 text-gray-500">
                     {new Date(article.publishedAt).toLocaleDateString('en-US', {

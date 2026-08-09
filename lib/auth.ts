@@ -1,66 +1,28 @@
-import { NextAuthOptions } from 'next-auth';
-import CredentialsProvider from 'next-auth/providers/credentials';
-import bcrypt from 'bcryptjs';
+import { cookies } from 'next/headers';
 
-export const authOptions: NextAuthOptions = {
-  session: {
-    strategy: 'jwt',
-  },
-  providers: [
-    CredentialsProvider({
-      name: 'Credentials',
-      credentials: {
-        email: { label: 'Email', type: 'email' },
-        password: { label: 'Password', type: 'password' },
-      },
-      async authorize(credentials) {
-        if (!credentials?.email || !credentials?.password) {
-          return null;
-        }
+const API_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:5000';
 
-        const adminEmail = process.env.ADMIN_EMAIL;
-        const adminPasswordHash = process.env.ADMIN_PASSWORD_HASH;
+export interface SessionUser {
+  id: string;
+  email: string;
+  name: string;
+}
 
-        if (!adminEmail || !adminPasswordHash) {
-          console.error('Admin credentials not configured in environment variables');
-          return null;
-        }
+export async function getSession(): Promise<{ user: SessionUser } | null> {
+  const cookieStore = await cookies();
+  const cookieHeader = cookieStore
+    .getAll()
+    .map((c) => `${c.name}=${c.value}`)
+    .join('; ');
 
-        if (credentials.email !== adminEmail) {
-          return null;
-        }
-
-        // const isValid = await bcrypt.compare(credentials.password, adminPasswordHash);
-        const isValid = credentials.password === adminPasswordHash;
-
-        if (!isValid) {
-          return null;
-        }
-
-        return {
-          id: '1',
-          email: adminEmail,
-          name: 'Admin',
-        };
-      },
-    }),
-  ],
-  pages: {
-    signIn: '/admin/login',
-  },
-  callbacks: {
-    async jwt({ token, user }) {
-      if (user) {
-        token.id = user.id;
-      }
-      return token;
-    },
-    async session({ session, token }) {
-      if (token && session.user) {
-        (session.user as { id?: string }).id = token.id as string;
-      }
-      return session;
-    },
-  },
-  secret: process.env.NEXTAUTH_SECRET,
-};
+  try {
+    const res = await fetch(`${API_URL}/api/auth/me`, {
+      headers: { cookie: cookieHeader },
+      cache: 'no-store',
+    });
+    if (!res.ok) return null;
+    return res.json();
+  } catch {
+    return null;
+  }
+}

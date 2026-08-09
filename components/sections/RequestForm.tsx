@@ -3,6 +3,8 @@
 import { useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { UploadCloud, FileText, X, Send } from 'lucide-react';
+import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input';
+import type { Value as PhoneValue } from 'react-phone-number-input';
 
 const COUNTRY_CODES = [
   'sa', 'ae', 'kw', 'qa', 'bh', 'om', 'eg', 'jo', 'iq', 'ye',
@@ -14,9 +16,9 @@ const SPECIALTY_CODES = [
 ] as const;
 
 const ACCEPTED_TYPES = ['application/pdf', 'image/jpeg', 'image/jpg', 'image/png'];
-const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
+const MAX_FILE_SIZE = 10 * 1024 * 1024;
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:4000';
+const API_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:5000';
 
 interface RequestFormProps {
   source?: 'home' | 'blog';
@@ -28,6 +30,8 @@ export default function RequestForm({ source = 'home', articleSlug, locale }: Re
   const t = useTranslations('requestForm');
   const fileInputRef = useRef<HTMLInputElement>(null);
 
+  const [phone, setPhone] = useState<PhoneValue | undefined>(undefined);
+  const [phoneError, setPhoneError] = useState('');
   const [files, setFiles] = useState<File[]>([]);
   const [isDragging, setIsDragging] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -54,11 +58,19 @@ export default function RequestForm({ source = 'home', articleSlug, locale }: Re
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setPhoneError('');
+
+    if (!phone || !isValidPhoneNumber(phone)) {
+      setPhoneError(t('phoneInvalid'));
+      return;
+    }
+
     setError(null);
     setIsSubmitting(true);
 
     const form = e.currentTarget;
     const fd = new FormData(form);
+    fd.set('phone', phone);
     fd.set('source', source);
     if (articleSlug) fd.set('articleSlug', articleSlug);
     if (locale) fd.set('locale', locale);
@@ -123,22 +135,19 @@ export default function RequestForm({ source = 'home', articleSlug, locale }: Re
 
                 {/* Phone */}
                 <div>
-                  <label className={labelClass} htmlFor="phone">
+                  <label className={labelClass}>
                     {t('phoneLabel')} *
                   </label>
-                  <div className="flex" dir="ltr">
-                    <span className="flex items-center justify-center px-3 shrink-0 rounded-s-xl border border-e-0 border-[var(--color-border)] bg-[var(--color-off-white)] text-sm text-[var(--color-text-muted)] font-medium">
-                      +966
-                    </span>
-                    <input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      required
-                      placeholder={t('phonePlaceholder')}
-                      className="flex-1 min-w-0 bg-white border border-[var(--color-border)] rounded-e-xl px-4 py-2.5 text-sm text-[var(--color-text)] placeholder:text-[var(--color-text-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]/30 focus:border-[var(--color-primary)] transition-colors"
-                    />
-                  </div>
+                  <PhoneInput
+                    international
+                    defaultCountry="SA"
+                    value={phone}
+                    onChange={setPhone}
+                    placeholder={t('phonePlaceholder')}
+                  />
+                  {phoneError && (
+                    <p className="text-xs text-red-500 mt-1">{phoneError}</p>
+                  )}
                 </div>
 
                 {/* Country */}
@@ -192,7 +201,7 @@ export default function RequestForm({ source = 'home', articleSlug, locale }: Re
 
               {/* File upload */}
               <div>
-                <label className={labelClass}>{t('uploadLabel')} *</label>
+                <label className={labelClass}>{t('uploadLabel')}</label>
                 <div
                   onClick={() => fileInputRef.current?.click()}
                   onDragOver={(e) => {
