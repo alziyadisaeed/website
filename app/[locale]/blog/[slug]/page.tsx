@@ -1,10 +1,8 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { unstable_cache } from 'next/cache';
 import { Calendar, User, Clock } from 'lucide-react';
 import Image from 'next/image';
-import { connectDB } from '@/lib/mongodb';
-import Article from '@/lib/models/Article';
+import { getArticlesRaw } from '@/lib/articles';
 import { sanitizeHtml } from '@/lib/sanitize';
 import JsonLd from '@/components/seo/JsonLd';
 import RequestForm from '@/components/sections/RequestForm';
@@ -29,31 +27,27 @@ interface ArticleDoc {
   isFallback: boolean;
 }
 
-const getArticle = unstable_cache(
-  async (slug: string, locale: Locale): Promise<ArticleDoc | null> => {
-    await connectDB();
-    const doc = await Article.findOne({ slug }).lean();
-    if (!doc || !doc.translations?.ar) return null;
+async function getArticle(slug: string, locale: Locale): Promise<ArticleDoc | null> {
+  const docs = await getArticlesRaw();
+  const doc = docs.find((d) => d.slug === slug);
+  if (!doc || !doc.translations?.ar) return null;
 
-    const translation = doc.translations[locale] ?? doc.translations.ar;
+  const translation = doc.translations[locale] ?? doc.translations.ar;
 
-    return {
-      _id: String(doc._id),
-      title: translation.title,
-      slug: doc.slug,
-      excerpt: translation.excerpt,
-      content: translation.content,
-      publishedAt: doc.publishedAt ?? doc.createdAt ?? new Date(),
-      updatedAt: doc.updatedAt ?? new Date(),
-      author: doc.author,
-      wordCount: translation.wordCount,
-      coverImage: doc.coverImage?.url ? `${apiUrl}${doc.coverImage.url}` : undefined,
-      isFallback: !doc.translations[locale],
-    };
-  },
-  ['article-detail'],
-  { tags: ['articles'], revalidate: 86400 }
-);
+  return {
+    _id: doc._id,
+    title: translation.title,
+    slug: doc.slug,
+    excerpt: translation.excerpt,
+    content: translation.content,
+    publishedAt: doc.publishedAt ?? doc.createdAt ?? new Date().toISOString(),
+    updatedAt: doc.updatedAt ?? new Date().toISOString(),
+    author: doc.author,
+    wordCount: translation.wordCount,
+    coverImage: doc.coverImage?.url ? `${apiUrl}${doc.coverImage.url}` : undefined,
+    isFallback: !doc.translations[locale],
+  };
+}
 
 export async function generateMetadata({
   params,

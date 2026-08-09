@@ -2,9 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Calendar, ArrowRight } from 'lucide-react';
-import { connectDB } from '@/lib/mongodb';
-import Article from '@/lib/models/Article';
-import { unstable_cache } from 'next/cache';
+import { getArticlesRaw } from '@/lib/articles';
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "https://Alziyadi Med.com";
 const apiUrl = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:5000';
@@ -59,29 +57,29 @@ interface ArticleDoc {
 
 type Locale = 'ar' | 'en' | 'ru';
 
-const getArticles = unstable_cache(
-  async (locale: Locale): Promise<ArticleDoc[]> => {
-    await connectDB();
-    const docs = await Article.find({}).sort({ publishedAt: -1 }).lean();
-    return docs
-      .filter((d) => d.translations?.ar) // Arabic is always required, so this excludes nothing valid
-      .map((d) => {
-        const translation = d.translations[locale] ?? d.translations.ar;
-        return {
-          _id: String(d._id),
-          title: translation.title,
-          slug: d.slug,
-          excerpt: translation.excerpt,
-          publishedAt: d.publishedAt ?? d.createdAt ?? new Date(),
-          author: d.author,
-          coverImage: d.coverImage?.url ? `${apiUrl}${d.coverImage.url}` : undefined,
-          isFallback: !d.translations[locale],
-        };
-      });
-  },
-  ['articles-list'],
-  { tags: ['articles'], revalidate: 86400 }
-);
+async function getArticles(locale: Locale): Promise<ArticleDoc[]> {
+  const docs = await getArticlesRaw();
+  return docs
+    .filter((d) => d.translations?.ar) // Arabic is always required, so this excludes nothing valid
+    .sort(
+      (a, b) =>
+        new Date(b.publishedAt ?? b.createdAt ?? 0).getTime() -
+        new Date(a.publishedAt ?? a.createdAt ?? 0).getTime()
+    )
+    .map((d) => {
+      const translation = d.translations[locale] ?? d.translations.ar!;
+      return {
+        _id: d._id,
+        title: translation.title,
+        slug: d.slug,
+        excerpt: translation.excerpt,
+        publishedAt: d.publishedAt ?? d.createdAt ?? new Date().toISOString(),
+        author: d.author,
+        coverImage: d.coverImage?.url ? `${apiUrl}${d.coverImage.url}` : undefined,
+        isFallback: !d.translations[locale],
+      };
+    });
+}
 
 const headings: Record<string, string> = {
   ar: 'المدونة والموارد الطبية',

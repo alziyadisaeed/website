@@ -1,8 +1,9 @@
 import { notFound } from 'next/navigation';
-import { connectDB } from '@/lib/mongodb';
-import Article from '@/lib/models/Article';
 import { updateArticle } from '../../../_actions/articles';
 import ArticleForm from '@/components/admin/ArticleForm';
+import type { RawArticle } from '@/lib/articles';
+
+const API_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:5000';
 
 interface ArticleData {
   _id: string;
@@ -16,11 +17,14 @@ interface ArticleData {
 }
 
 async function getArticle(id: string): Promise<ArticleData | null> {
-  await connectDB();
-  const doc = await Article.findById(id).lean();
-  if (!doc) return null;
+  const res = await fetch(`${API_URL}/api/articles/${id}`, {
+    headers: { 'x-api-key': process.env.SERVICE_API_KEY ?? '' },
+    cache: 'no-store',
+  });
+  if (!res.ok) return null;
+  const doc: RawArticle = await res.json();
   return {
-    _id: String(doc._id),
+    _id: doc._id,
     slug: doc.slug,
     translations: {
       ar: doc.translations?.ar,

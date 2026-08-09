@@ -1,8 +1,9 @@
-import { connectDB } from '@/lib/mongodb';
-import Article from '@/lib/models/Article';
 import Link from 'next/link';
 import { PlusCircle, Pencil } from 'lucide-react';
 import DeleteArticleButton from '@/components/admin/DeleteArticleButton';
+import type { RawArticle } from '@/lib/articles';
+
+const API_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:5000';
 
 interface ArticleRow {
   _id: string;
@@ -13,15 +14,25 @@ interface ArticleRow {
 }
 
 async function getArticles(): Promise<ArticleRow[]> {
-  await connectDB();
-  const docs = await Article.find({}).sort({ publishedAt: -1 }).lean();
-  return docs.map((d) => ({
-    _id: String(d._id),
-    title: d.translations?.ar?.title ?? '(untitled)',
-    slug: d.slug,
-    publishedAt: d.publishedAt ?? d.createdAt ?? new Date(),
-    locales: (['ar', 'en', 'ru'] as const).filter((l) => !!d.translations?.[l]),
-  }));
+  const res = await fetch(`${API_URL}/api/articles`, {
+    headers: { 'x-api-key': process.env.SERVICE_API_KEY ?? '' },
+    cache: 'no-store',
+  });
+  if (!res.ok) return [];
+  const docs: RawArticle[] = await res.json();
+  return docs
+    .sort(
+      (a, b) =>
+        new Date(b.publishedAt ?? b.createdAt ?? 0).getTime() -
+        new Date(a.publishedAt ?? a.createdAt ?? 0).getTime()
+    )
+    .map((d) => ({
+      _id: d._id,
+      title: d.translations?.ar?.title ?? '(untitled)',
+      slug: d.slug,
+      publishedAt: d.publishedAt ?? d.createdAt ?? new Date().toISOString(),
+      locales: (['ar', 'en', 'ru'] as const).filter((l) => !!d.translations?.[l]),
+    }));
 }
 
 const localeBadgeColors: Record<string, string> = {

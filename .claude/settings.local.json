@@ -21,7 +21,11 @@
       "Bash(grep -rA3 '\"about\"' messages/en.json)",
       "PowerShell(Add-Type -AssemblyName System.Drawing; $img = [System.Drawing.Image]::FromFile\\(\"D:\\\\___dr_saeed\\\\src\\\\client\\\\public\\\\ceo.png\"\\); \"$\\($img.Width\\)x$\\($img.Height\\)\"; $img.Dispose\\(\\))",
       "Bash(awk 'NR==75{print; print \"\\\\t\\\\t\\\\t\\\\t\\\\t<div className=\\\\\"text-center mt-6\\\\\">\"; print \"\\\\t\\\\t\\\\t\\\\t\\\\t\\\\t<p className=\\\\\"font-semibold text-lg text-[var\\(--color-text\\)]\\\\\">{t\\(\\\\\"imageTitle\\\\\"\\)}</p>\"; print \"\\\\t\\\\t\\\\t\\\\t\\\\t\\\\t<p className=\\\\\"text-[var\\(--color-text-muted\\)] text-sm\\\\\">{t\\(\\\\\"imageSubtitle\\\\\"\\)}</p>\"; print \"\\\\t\\\\t\\\\t\\\\t\\\\t</div>\"; next}1' components/sections/About.tsx)",
-      "Bash(mv /tmp/about.tsx components/sections/About.tsx)"
+      "Bash(mv /tmp/about.tsx components/sections/About.tsx)",
+      "Read(//d/___dr_saeed/src/**)",
+      "Read(//d//**)",
+      "Bash(pnpm install *)",
+      "Bash(npx next *)"
     ]
   }
 }
