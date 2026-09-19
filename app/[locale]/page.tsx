@@ -11,8 +11,9 @@ import RequestForm from '@/components/sections/RequestForm';
 import ContactCTA from '@/components/sections/ContactCTA';
 import JsonLd from '@/components/seo/JsonLd';
 import { getTranslations } from 'next-intl/server';
+import { SITE_URL } from '@/lib/site';
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "https://Alziyadi Med.com";
+const baseUrl = SITE_URL;
 
 const titles: Record<string, string> = {
 	ar: "الزيادي ميد | العلاج في روسيا",

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
+import { SITE_URL } from '@/lib/site';
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "https://Alziyadi Med.com";
+const baseUrl = SITE_URL;
 
 const titles: Record<string, string> = {
 	ar: "سياسة الخصوصية | الزيادي ميد للعلاج في روسيا",

@@ -2,8 +2,9 @@ import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import JsonLd from '@/components/seo/JsonLd';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/site';
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "https://Alziyadi Med.com";
+const baseUrl = SITE_URL;
 
 const titles: Record<string, string> = {
 	ar: "الأسئلة الشائعة | الزيادي ميد",

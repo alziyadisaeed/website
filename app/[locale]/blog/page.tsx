@@ -3,8 +3,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Calendar, ArrowRight } from 'lucide-react';
 import { getArticlesRaw } from '@/lib/articles';
+import { SITE_URL } from '@/lib/site';
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "https://Alziyadi Med.com";
+const baseUrl = SITE_URL;
 const apiUrl = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:5000';
 
 const titles: Record<string, string> = {

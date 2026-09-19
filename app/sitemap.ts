@@ -1,7 +1,8 @@
 import type { MetadataRoute } from 'next';
 import { getArticlesRaw } from '@/lib/articles';
+import { SITE_URL } from '@/lib/site';
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "https://Alziyadi Med.com";
+const baseUrl = SITE_URL;
 const locales = ['ar', 'en', 'ru'] as const;
 
 const staticPages = [

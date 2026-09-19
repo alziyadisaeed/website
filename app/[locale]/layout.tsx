@@ -7,6 +7,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import WhatsAppFloat from '@/components/layout/WhatsAppFloat';
 import JsonLd from '@/components/seo/JsonLd';
+import { SITE_URL } from '@/lib/site';
 
 const notoNaskhArabic = Noto_Naskh_Arabic({
   subsets: ['arabic'],
@@ -37,7 +38,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-	metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL ?? "https://Alziyadi Med.com"),
+	metadataBase: new URL(SITE_URL),
 	icons: {
 		icon: [
 			{ url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
@@ -50,7 +51,7 @@ export function generateStaticParams() {
   return [{ locale: 'ar' }, { locale: 'en' }, { locale: 'ru' }];
 }
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "https://Alziyadi Med.com";
+const baseUrl = SITE_URL;
 
 const organizationJsonLd = {
 	"@context": "https://schema.org",

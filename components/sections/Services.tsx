@@ -1,5 +1,6 @@
 import { PlaneTakeoff, Hospital, HeartPulse, Check } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
+import { SITE_URL } from '@/lib/site';
 
 interface ServicesProps {
   locale: string;
@@ -29,7 +30,7 @@ export default async function Services({ locale }: ServicesProps) {
     },
   ];
 
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "https://Alziyadi Med.com";
+  const baseUrl = SITE_URL;
 
   return (
 		<section id="services" className="py-16 sm:py-20">

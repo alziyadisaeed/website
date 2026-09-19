@@ -1,11 +1,30 @@
 import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
+import { LEGACY_HOST_PATTERN, SITE_URL } from './lib/site';
 
 const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 
 const nextConfig: NextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
+  },
+  // Retired domain -> canonical domain, 308, path + query preserved, single hop
+  // (www.old also goes straight to new). Never the reverse.
+  async redirects() {
+    return [
+      {
+        source: '/',
+        has: [{ type: 'host', value: LEGACY_HOST_PATTERN }],
+        destination: `${SITE_URL}/ar`,
+        permanent: true,
+      },
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: LEGACY_HOST_PATTERN }],
+        destination: `${SITE_URL}/:path*`,
+        permanent: true,
+      },
+    ];
   },
   async headers() {
     return [
